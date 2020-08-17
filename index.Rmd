@@ -1,0 +1,41 @@
+---
+title: "."
+output: 
+  flexdashboard::flex_dashboard:
+    logo: fig/hex-tidyverse.png
+    orientation: rows    
+    theme: readable
+    vertical_layout: fill
+    css: extra.css
+    include:
+      after_body: footer.html
+      before_body: header.html
+mainfont: NanumGothic 
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+## 0. R 마크다운 환경설정 ------
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE,
+                    comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+options(knitr.duplicate.label = 'allow')
+
+## 0. R 팩키지 ------
+library(flexdashboard)
+library(tidyverse)
+library(janitor)
+library(extrafont)
+loadfonts()
+library(here)
+library(fs)
+library(glue)
+
+```
+
+```{r child="dashboard/meetup-2020.Rmd", encoding="UTF-8"}
+```
+
