@@ -1,0 +1,70 @@
+---
+title: "."
+output: 
+  flexdashboard::flex_dashboard:
+    logo: fig/hex-tidyverse.png
+    orientation: rows    
+    theme: readable
+    vertical_layout: fill
+    css: extra.css
+    include:
+      after_body: footer.html
+      before_body: header.html
+mainfont: NanumGothic 
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+## 0. R 마크다운 환경설정 ------
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE,
+                    comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+options(knitr.duplicate.label = 'allow')
+
+library(flexdashboard)
+```
+
+
+History
+===============================================================================
+
+Column {.tabset}
+-----------------------------------------------------------------------------
+
+### R Meetup Season II 
+
+R Meetup을 시작점으로 출발을 했지만, Meetup에 오시는 분들은 대부분 데이터 사이언스 문제를 풀려고 하는 학생이나 실무에 계신 분들이 많아 이에 부합되도록 
+Meetup 운영을 변경하게 되었습니다.
+
+[Tidyverse Korea](https://www.facebook.com/groups/tidyverse/)와 [PRESSer](https://www.facebook.com/groups/1473988286034801/) 공동으로 R Meetup 시즌2를 2018년 11월부터 시작했습니다. 2019년부터 "데이터 사이언스" Meetup으로 출발하게 되는 이유는 크게 두 가지입니다. 먼저 R 언어로 코딩하면서 발표하시는 분을 연사로 모시는 것이 어려웠습니다. R Meetup 시즌1부터 같은 연사분이 계속 발표를 진행함으로써 피로감이 깊어지는 것이 "데이터 사이언스 밋업"으로 확대하게된 직접적인 이유입니다. 다른 한편으로는 R Meetup에 오시는 분들이 R보다는 "데이터 사이언스" 문제를 갖고 계신 분이 많다는 것이 그동안 밋업을 운영하면서 알게 되었습니다. "데이터 사이언스"에 대한 저변이 확대되어 사회적인 호응도 있는 것으로 판단되고, 특히  `reticulate`, `keras`, `sparklyr` 등 다양한 R 팩키지가 출현하면서 더 이상 R, 파이썬 등 언어중심으로 Meetup을 나눠 진행하는 것은 무의미해졌기 때문입니다.
+
+
+데이터 분석가와 과학자들이 만나 피자와 가벼운 맥주를 마시면서 세미나 듣는 방식으로 진행되었고, R 뿐만 아니라 파이썬을 비롯한 데이터 사이언스 하시는 분들이 모이는 미트업이였습니다.
+
+- 기간 : 2018년 11월 22일 ~ 2019년 9월 18일 
+- 시간 : 매월 세째주 (수요일) 저녁 19:00 ~ 
+- 장소 : **스파크플러스 역삼점/선릉점**
+
+
+- 도서 후원
+    + [우정훈 (KPMG), AI 사람에게 배우다 - 인공지능이 만드는 기업의 미래](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=195774023) (2권)
+    + [Do it! 쉽게 배우는 R 데이터 분석](https://bit.ly/2TzaSJa) (1권) 
+    + 제이펍 1권 - ["R로 배우는 텍스트 마이닝: tidytext 라이브러리를 활용하는 방법"](https://jpub.tistory.com/924)
+    + 이현열 - [R을 이용한 퀀트 투자 포트폴리오 만들기](http://www.yes24.com/Product/Goods/78125551), 제이펍 2권
+    
+### R Meetup Season I 
+
+
+xwMOOC R Meetup은 KRUG 1,2대 회장을 역임한 유충현님을 모시고 xwMOOC 이광춘, 캐글뽀개기 이상열이 십시일반 
+노력을 하여 2017년 8월 ~ 2018년 5월까지 매월 총 10회 진행되었습니다.
+KossLab(공개SW 개발자센터)의 공간지원을 받아 나름 쾌적한 환경에서 R 사용자들이 모여 즐거운 배움과 네트워킹 시간을 갖게되었습니다.
+
+- 주관 : [xwMOOC](https://www.facebook.com/xwmooc/)
+- 운영 : [캐글뽀개기](https://www.facebook.com/groups/kagglebreak/)
+- 장소 : 토즈 강남점 / 선릉 패스트파이브
+- 매달 셋째주 수요일
+
+    

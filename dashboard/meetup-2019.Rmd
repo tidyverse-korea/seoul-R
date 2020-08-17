@@ -1,0 +1,91 @@
+---
+title: "."
+output: 
+  flexdashboard::flex_dashboard:
+    logo: fig/hex-tidyverse.png
+    orientation: rows    
+    theme: readable
+    vertical_layout: fill
+    css: extra.css
+    include:
+      after_body: footer.html
+      before_body: header.html
+mainfont: NanumGothic 
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+## 0. R 마크다운 환경설정 ------
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE,
+                    comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+options(knitr.duplicate.label = 'allow')
+
+library(flexdashboard)
+```
+
+
+2019
+===============================================================================
+
+
+Column {.tabset}
+-----------------------------------------------------------------------------
+
+### 2019-04 ~ 2019-09
+
+<br>
+
+|    Date      | Name |          Title              |     Link    |     Comment          |
+|--------------|------|-----------------------------|-------------|-------------------|
+|2019.09.18(수)|이광춘| "문서를 이해하는 AI" |[발표자료](https://statkclee.github.io/ds-authoring/ds-document-ai.html) |      |
+|              |이재화| "케라스를 활용한 RNN & LSTM 자유로운 모델링 방법" |[발표자료](data/이재화.pdf) |      |
+|              |나성호| "R로 하는 RPA" |[발표자료](https://bit.ly/2kGtKqf) |      |
+|              |윤정환| "이스포츠에서의 데이터 분석" |[발표자료](data/4_안상선.pdf) |      |
+|2019.08.21(수)|이광춘| "`tidyverse` 모형 `tidymodels`" |[발표자료](data/esports - DataScienceMeetUp.pdf) |      |
+|              |한수미/남내현| "사학 학술연구논문 빅데이터 분석-키워드와 토픽모델링 분석을 중심으로" |[발표자료](http://tiny.cc/0lihbz) |      |
+|              |설현수| "jamovi 통계 프로그램 소개" |[발표자료](data/meetup_설현수.ppt) |      |
+|              |안상선| "위험하지 않은 마약 데이터 흡입 수기 : 마약으로 인한 사회적 비용 모형 추계 사례" |[발표자료](data/4_안상선.pdf) |      |
+|2019.07.24(수)|이광춘| "앙상블 모형: R vs. Python" |[발표자료](https://statkclee.github.io/model/model-ensemble.html) |      |
+|              |안중호| "마케터를 위한 빅데이터" |[발표자료](data/190724_마케터를_위한_빅데이터_대홍기획_안중호.pdf) |      |
+|              |이현열| "데이터사이언스로 이해하는 퀀트" |[발표자료](https://docs.google.com/presentation/d/1pw0DIioZ2bc0pUOBWJKZZQuR3VTgiyeICq-s1Rqgxoc/) |      |
+|              |이민호| "데이터분석가의 가벼운 개발환경 : Ipad로 작업해보기" |[발표자료](data/DS_meetup_analysis_env_using_ipad_190723.pdf) |      |
+|2019.06.19(수)|이광춘| "데이터 과학자의 글쓰기 - 재현가능한 논문작성" |[발표자료](https://statkclee.github.io/author_carpentry_kr/) |      |
+|              |서희| "Reactlog로 Shiny 쉽게 디버깅하기" |[발표자료](https://www.slideshare.net/HeeSeo/20190619-meetup-rshinyreactlogv01) |      |
+|              |문건웅| "Conditional Process Analysis using R" |[1번](data/1.회귀에서_조절까지.pdf), [2번](data/2.회귀에서_매개모형으로.pdf), [3번](data/3.processR_패키지_소개.pdf), [4번](data/4.조건부_프로세스_분석_예제.pdf) |      |
+|2019.05.15(수)|어수행| "Python에서 EMR데이터 (생존)분석" |[발표자료](data/EMR_Analysis_Python_Public.pdf) |      |
+|              |김지연| "너의 기분 이모지(emoji)? - 감정기반 이모지 추천 시스템" |[발표자료](data/모지모지최종.pdf) |      |
+|              |홍원준| "의료데이터 기반의 데이터서비스 개발기" |[발표자료](https://speakerdeck.com/hongwonjun/yiryodeiteo-gibanyi-deiteoseobiseu-gaebalgi) |      |
+|              |송효진| "Tidyverse Before and After" |[발표자료](data/송효진.pdf)|     |
+|2019.04.24(수)|이광춘| (한국) 데이터 과학자의 클라우드 서비스 |[발표자료](https://statkclee.github.io/ds-authoring/ds_meetup_ds_on_cloud.html) |      |
+|              |정도현|데이터 과학자를 위한 AWS 서비스 소개 | [발표자료](https://www.slideshare.net/JulienSIMON5/aws-reinvent-2018-machine-learning-recap-december-2018)| |
+|              |임상배|Sparklyr을 활용한 R 코드 분산 처리 | [발표자료](data/Sparklyr_R.pdf) | |
+|              |홍운표|Changes and benefits of Automated ML by DataRobot |[발표자료](data/DS_meetup_20190424-DataRobot.pdf) |  |
+
+### 2018-11 ~ 2019-03
+
+<br>
+
+|    Date      | Name |          Title              |     Link    |     Comment          |
+|--------------|------|-----------------------------|-------------|-------------------|
+|2019.03.20(수)|이광춘| 금융 빅데이터 시각화 - KOSPI ~~200~~ 50 |[발표자료](https://statkclee.github.io/finance/finance-trelliscope-advanced.html) |      |
+|              |유제성| 운영인력 최적화를 위한 HR Analytics |[발표자료](data/콜센터-인력-탐색분석.pptx), [R코드](data/콜센터인력.r) |      |
+|              |이승준| S&P500 데이터 수집과 분석 |[발표01](https://nbviewer.jupyter.org/710b8f0a4bd9a8df91ae1be6c7e838b1),[발표02](https://nbviewer.jupyter.org/35a1b0d5248bc9b09513e53be437ac42) |      |
+|              |안상선| 이상하고 비정상적이고 괴랄한 금융 시계열 분석 |[발표자료](data/발표_엠로보_안상선.pdf) |      |
+|2019.02.20(수)|이광춘| 자연어 처리는 R로 가능한가? |[발표자료](https://statkclee.github.io/text/langcon-2019-tutorial.html) |      |
+|              |나성호| 카카오 지도 API 핸즈온 |[발표자료](https://bit.ly/2NdmhbI) |      |
+|              |어수행| Self-supervised learning for surgical vision data |[발표자료](https://bit.ly/2Xe2IET) |      |
+|2019.01.23(수)|김설기|   R for Data Science        |[발표자료](data/r4ds.pdf) |      |
+|              |나영준| R for animal science: project ```adatalab```|[슬라이드쉐어](https://www.slideshare.net/YoungjunNa/r-for-animal-science), [GitHub](https://github.com/YoungjunNa/2019DataSci_Meetup/blob/master/R%20for%20animal%20science.pdf) |      |
+|              |김준혁| `RcppMeCab`은 왜 만들었나? |[발표자료](data/data-science-meetup-190123-RcppMeCab-JK.pdf) |      |
+|              |차석근| 스마트공장 및 데이터 분석 |[발표자료](data/데이터 사이언스_스마트공장_차석근(발표자료).ppt) |      |
+|2018.12.20(목)|이광춘| 데이터 과학자가 바라본 사기 탐지(Fraud Detection) |[발표자료](https://statkclee.github.io/ds-authoring/r_meetup_outlier_anomaly.html) | 
+|              |나성호| 2018 프로야구 기사로 살펴본 이모저모              |[발표자료](https://bit.ly/2Ex487i) | 
+|              |최진영| AutoML과 머신러닝 툴 개발/사업화 과정의 어려움    |[발표자료](data/XBrain_Seminar_1220_RMeetUp.pdf) | 
+|2018.11.22(목)|이광춘|설명가능한 기계학습          |[발표자료](https://www.slideshare.net/statkclee/cloudera-sessions-2018-datayanolja) |클라우데라 |
+|              |나성호|기업리뷰 분석 시리즈         |[1](https://mrkevinna.github.io/특강-기업리뷰-분석-1/) [2](https://mrkevinna.github.io/특강-기업리뷰-분석-2/) [3](https://mrkevinna.github.io/특강-기업리뷰-분석-3/) |순천향대학교 |
+
+

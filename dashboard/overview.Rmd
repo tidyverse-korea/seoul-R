@@ -1,0 +1,52 @@
+---
+title: "."
+output: 
+  flexdashboard::flex_dashboard:
+    logo: fig/hex-tidyverse.png
+    orientation: rows    
+    theme: readable
+    vertical_layout: fill
+    css: extra.css
+    include:
+      after_body: footer.html
+      before_body: header.html
+mainfont: NanumGothic 
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+## 0. R 마크다운 환경설정 ------
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE,
+                    comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+options(knitr.duplicate.label = 'allow')
+
+library(flexdashboard)
+```
+
+
+Overview
+===============================================================================
+
+<br>
+<br>
+
+R is an open source software and programming language for data ingestion, data processing, exploratory data analysis, statistical modeling, visualization and machine learning among other things. Recently, as the term **"data science"** has emerged to describe collectively these tasks, R has also become the primary tool of choice for data scientists. The [**Tidyverse Seoul R meetup**](https://www.meetup.com/seoul-r-meetup) brings together local users of R and featuring talks with world-class speakers while creating fruitful networking opportunities for its members.
+
+- Tidyverse Seoul R Meetup: [link](https://tidyverse-korea.github.io/seoul-R/)
+- Facebook Group: [link](https://www.facebook.com/groups/tidyverse)
+- Seoul R Meetup: [link](https://www.meetup.com/seoul-r-meetup)
+- Shiny Seoul Meetup: [link](https://github.com/shinykorea/Meetup)
+
+<br>
+<br>
+
+#### Organizers
+
+- [Choonghyun Ryu, 유충현](https://github.com/choonghyunryu)
+- [Kwangchun Lee, 이광춘](https://github.com/statkclee)
+- [Keon-Woong Moon, 문건웅](https://github.com/cardiomoon)
+    

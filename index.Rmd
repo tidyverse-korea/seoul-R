@@ -1,5 +1,5 @@
 ---
-title: "."
+title: "Seoul R Meetup"
 output: 
   flexdashboard::flex_dashboard:
     logo: fig/hex-tidyverse.png
@@ -36,6 +36,22 @@ library(glue)
 
 ```
 
+```{r child="dashboard/overview.Rmd", encoding="UTF-8"}
+```
+
+
 ```{r child="dashboard/meetup-2020.Rmd", encoding="UTF-8"}
 ```
 
+
+```{r child="dashboard/meetup-2019.Rmd", encoding="UTF-8"}
+```
+
+```{r child="dashboard/meetup-2018.Rmd", encoding="UTF-8"}
+```
+
+```{r child="dashboard/history.Rmd", encoding="UTF-8"}
+```
+
+```{r child="dashboard/coc.Rmd", encoding="UTF-8"}
+```

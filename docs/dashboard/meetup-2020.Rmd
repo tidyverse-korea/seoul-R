@@ -37,6 +37,26 @@ Column {.tabset}
 
 ### September (9월)
 
+<br>
+<br>
+
+- When: **Wednesday, September 9, 2020 7:00 PM to 9:00 PM GMT+9 **
+    - RSVP opens **Wednesday, August 26, 2020** 7:00 PM
+- Where: Online Event - Link visible for attendees
+
+<br>
+<br>
+
+- **Schedule**
+    - 6:30 open zoom
+    - 7:00-7:30 Presentation Talk 1
+    - 7:30-8:00 Presentation Talk 2
+    - 8:00-8:30 Presentation Talk 3
+    - 8:30 ~ 9:00 Virtual Social
+
+<br>
+<br>
+
 - **Talk** (25min talk, 5min Q&A)
     - Title: Why Tidymodels
     - Korean Title: 왜 당근(caret)은 안되고 새로운 신상 당근(Tidymodel)인가?
