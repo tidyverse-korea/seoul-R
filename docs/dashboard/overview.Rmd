@@ -38,7 +38,7 @@ R is an open source software and programming language for data ingestion, data p
 
 - Tidyverse Seoul R Meetup: [link](https://tidyverse-korea.github.io/seoul-R/)
 - Facebook Group: [link](https://www.facebook.com/groups/tidyverse)
-- Seoul R Meetup: [link](https://www.meetup.com/seoul-r-meetup)
+- **Seoul R Meetup**: [link](https://www.meetup.com/seoul-r-meetup)
 - Shiny Seoul Meetup: [link](https://github.com/shinykorea/Meetup)
 
 <br>
