@@ -62,10 +62,15 @@ Column {.tabset}
     - Korean Title: 왜 당근(caret)은 안되고 새로운 신상 당근(Tidymodel)인가?
     - **Speaker**: Kwangchun Lee (이광춘)
     - [slide deck](https://statkclee.github.io/ds-authoring/ds-why-tidymodels.html#/)
+    - Abstract: Tidyverse is regareded as a new framework, ecosystem, thought leader for data science. Tidyverse also has a profound effect on models. When Max Kun moved to RStudio, perhaps the Tidymodels has begun. Now Tidymodels have become the standard of ML.
+    - 초록: Tidyverse는 데이터 과학을 위한 새로운 프레임워크, 생태계, 리더로 받아들여지고 있다. ML 분야도 Tidyverse 영향을 벗어날 수 없었다. Max Khun 박사가 RStudio로 자리를 옮기는 시점부터 아마도 Tidymodels의 시작으로 볼 수 있고 몇년이 지나 Tidymodels는 ML 의 표준으로 자리잡아가고 있다.
 - **Talk** (25min talk, 5min Q&A)
-    - Title: The state of the art of data science with cloud computing"
-    - Korean Title: 클라우드와 함께 살펴보는 데이터 사이언스 발전 및 미래
+    - Title: "MLOps with R: Collaboration of data scientists & developers/engineers"
+    - Korean Title: "R에서 MLOps 시작하기: 데이터 과학자 & 개발자/엔지니어 협력"
     - **Speaker**: Ian Choi (최영락)
+    - Abstract: Machine Learning Operations (MLOps) process becomes critical for reliable and efficient deployment of applications that depend on R-based models. This talk explains and demonstrates MLOps from DevOps story by dividing into three R components: 1) data upload, 2) machine learning model training & deployment, and 3) visualization with Shiny with Azure Machine Learning Service and GitHub Actions.
+    - 초록: 한글: R 기반 모델로 만들어진 데이터 분석 & 머신 러닝 모델을 안정적이고 효율적으로 지속적인 배포를 위해서는 MLOps프로세스가 필수일 것입니다. 본 발표에서는 DevOps에 대한 이야기를 시작으로, R로 구현한 1) 데이터 업로드 2) 머신 러닝 모델 트레이닝 & 배포 3) 시각화 분석 활용 (Shiny) 이라는 3가지 파트가 Azure Machine Learning Service와 GitHub Actions을 통해 MLOps를 데모와 함께 살펴봅니다.
+    - [slide deck](https://aka.ms/ian-mlops-r)
 - **Talk** (25min talk, 5min Q&A)
     - Title: The awesome way to buy a good calf with data science.
     - Korean Title: 데이터 과학과 함께 좋은 송아지를 사는 방법
