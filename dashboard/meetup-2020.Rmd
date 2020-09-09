@@ -43,6 +43,7 @@ Column {.tabset}
 - When: **Wednesday, September 9, 2020 7:00 PM to 9:00 PM GMT+9 **
     - RSVP opens **Wednesday, August 26, 2020** 7:00 PM
 - Where: Online Event - Link visible for attendees
+- [Seoul R Users: 2020-September](https://www.meetup.com/seoul-r-meetup/events/wpltwrybcmbmb/)
 
 <br>
 <br>
@@ -76,4 +77,41 @@ Column {.tabset}
     - Korean Title: 데이터 과학과 함께 좋은 송아지를 사는 방법
     - **Speaker**: Youngjun Na (나영준)
     - [slide deck](data/나영준-SeoulR.pdf)
+
+### October (10월)
+
+<br>
+<br>
+
+- When: **Wednesday, October 14, 2020 7:00 PM to 9:00 PM GMT+9**
+    - RSVP opens **RSVP opens Wednesday, September 30, 2020 7:00 PM**
+- Where: Online Event - Link visible for attendees
+- [Seoul R Users: 2020 - October](https://www.meetup.com/seoul-r-meetup/events/273025689/)
+
+<br>
+<br>
+
+- **Schedule**
+    - 6:30 open zoom
+    - 7:00-7:30 Presentation Talk 1
+    - 7:30-8:00 Presentation Talk 2
+    - 8:00-8:30 Presentation Talk 3
+    - 8:30 ~ 9:00 Virtual Social
+
+<br>
+<br>
+
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
+
 
