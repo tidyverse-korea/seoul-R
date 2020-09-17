@@ -35,15 +35,15 @@ library(flexdashboard)
 Column {.tabset}
 -----------------------------------------------------------------------------
 
-### September (9월)
+### Overview
 
 <br>
 <br>
 
-- When: **Wednesday, September 9, 2020 7:00 PM to 9:00 PM GMT+9 **
-    - RSVP opens **Wednesday, August 26, 2020** 7:00 PM
+- When: **Wednesday, October 14, 2020 7:00 PM to 9:00 PM GMT+9**
+    - RSVP opens **RSVP opens Wednesday, September 30, 2020 7:00 PM**
 - Where: Online Event - Link visible for attendees
-- [Seoul R Users: 2020-September](https://www.meetup.com/seoul-r-meetup/events/wpltwrybcmbmb/)
+- [Seoul R Users: 2020 - October](https://www.meetup.com/seoul-r-meetup/events/273025689/)
 
 <br>
 <br>
@@ -54,6 +54,20 @@ Column {.tabset}
     - 7:30-8:00 Presentation Talk 2
     - 8:00-8:30 Presentation Talk 3
     - 8:30 ~ 9:00 Virtual Social
+
+<br>
+<br>
+
+
+### September (9월)
+
+<br>
+<br>
+
+- When: **Wednesday, September 9, 2020 7:00 PM to 9:00 PM GMT+9 **
+    - RSVP opens **Wednesday, August 26, 2020** 7:00 PM
+- Where: Online Event - Link visible for attendees
+- [Seoul R Users: 2020-September](https://www.meetup.com/seoul-r-meetup/events/wpltwrybcmbmb/)
 
 <br>
 <br>
@@ -83,35 +97,18 @@ Column {.tabset}
 <br>
 <br>
 
-- When: **Wednesday, October 14, 2020 7:00 PM to 9:00 PM GMT+9**
-    - RSVP opens **RSVP opens Wednesday, September 30, 2020 7:00 PM**
-- Where: Online Event - Link visible for attendees
-- [Seoul R Users: 2020 - October](https://www.meetup.com/seoul-r-meetup/events/273025689/)
-
-<br>
-<br>
-
-- **Schedule**
-    - 6:30 open zoom
-    - 7:00-7:30 Presentation Talk 1
-    - 7:30-8:00 Presentation Talk 2
-    - 8:00-8:30 Presentation Talk 3
-    - 8:30 ~ 9:00 Virtual Social
-
-<br>
-<br>
 
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: 
-    - **Speaker**: 
+    - Title: Weather Report Automation - GitHub Actions
+    - Korean Title: "날씨보고서 자동화 - GitHub Actions"
+    - **Speaker**: Kwangchun Lee (이광춘)
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: 
-    - **Speaker**: 
+    - Title: "Tidy하게 그리고 Seamless하게"
+    - Korean Title: "Tidy하게 그리고 Seamless하게"
+    - **Speaker**: Choonghyun Ryu (유충현)
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: 
-    - **Speaker**: 
+    - Title: A/B 테스트와 Multi-Armed Bandit'
+    - Korean Title: A/B Testing & Multi-Armed Bandit'
+    - **Speaker**: Sulgi Kim (김설기)
 
 
