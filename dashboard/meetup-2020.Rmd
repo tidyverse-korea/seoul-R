@@ -107,8 +107,28 @@ Column {.tabset}
     - Korean Title: "Tidy하게 그리고 Seamless하게"
     - **Speaker**: Choonghyun Ryu (유충현)
 - **Talk** (25min talk, 5min Q&A)
-    - Title: A/B 테스트와 Multi-Armed Bandit'
-    - Korean Title: A/B Testing & Multi-Armed Bandit'
+    - Title: A/B 테스트와 Multi-Armed Bandit
+    - Korean Title: A/B Testing & Multi-Armed Bandit
     - **Speaker**: Sulgi Kim (김설기)
 
+
+### November (11월)
+
+<br>
+<br>
+
+
+- **Talk** (25min talk, 5min Q&A)
+    - Title: Almost All about Table
+    - Korean Title: "표에 대한 거의 모든 것"
+    - **Speaker**: Kwangchun Lee (이광춘)
+- **Talk** (25min talk, 5min Q&A)
+    - Title: "It's just a magic!!!"
+    - Korean Title: "유튜브 데이터의 마술"
+    - **Speaker**: Kevin Na (나성호)
+    - Abstract: 유튜브 크롤링으로 수집한 데이터를 sqlite3로 저장하고 깃허브로 푸쉬할 때마다 자동으로 Shiny 대시보드에서 호출하여 시각화하는 방법을 공유하는 자리입니다. YouTube Crawler + Sqlite DB + Github + RShiny + Crontab = Just Magic!!!
+- **Talk** (25min talk, 5min Q&A)
+    - Title: "Making serverless API with AWS Lambda and API Gateway in an easy way"
+    - Korean Title: "AWS Lamba 와 API Gateway로 가볍게 서버리스 API 만들기"
+    - **Speaker**: JungHwan Yun (윤정환)
 
