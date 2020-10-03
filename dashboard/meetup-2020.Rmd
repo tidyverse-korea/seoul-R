@@ -138,3 +138,24 @@ Column {.tabset}
     - Korean Title: "AWS Lamba 와 API Gateway로 가볍게 서버리스 API 만들기"
     - **Speaker**: JungHwan Yun (윤정환)
 
+### December (12월)
+
+<br>
+<br>
+
+
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: ""
+    - **Speaker**: 
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: ""
+    - **Speaker**: 
+- **Talk** (25min talk, 5min Q&A)
+    - Title: "Making Mobile App Using Shiny"
+    - Korean Title: "Shiny를 이용한 Mobile App 만들기"
+    - **Speaker**: Nam-Hyeon Jee (이남현)
+    - Abstract: 
+
+
