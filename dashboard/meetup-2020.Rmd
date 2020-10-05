@@ -109,6 +109,7 @@ Column {.tabset}
     - Title: "Tidy하게 그리고 Seamless하게"
     - Korean Title: "Tidy하게 그리고 Seamless하게"
     - **Speaker**: Choonghyun Ryu (유충현)
+    - 초록: 통계학자에서 비롯된 R 생태계가 이제는 Software Engineer의 합류로 더욱더 풍성해지고 있다. R의 태동과 진화의 역사로부터 tidy하고 seamless한 데이터 분석 아키텍트의 진화에 대해 소개한다. 그리고 이를 응용한 사례에 대한 소개와 tidy하고 seamless한 데이터분석 접근방법에 대해서 논의한다.
 - **Talk** (25min talk, 5min Q&A)
     - Title: A/B 테스트와 Multi-Armed Bandit
     - Korean Title: A/B Testing & Multi-Armed Bandit
