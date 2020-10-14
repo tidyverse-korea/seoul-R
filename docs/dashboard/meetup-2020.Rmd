@@ -115,6 +115,7 @@ Column {.tabset}
     - Title: A/B 테스트와 Multi-Armed Bandit
     - Korean Title: A/B Testing & Multi-Armed Bandit
     - **Speaker**: Sulgi Kim (김설기)
+    - [slide deck](data/MAB_RMeetUp.pptx)
     - 초록: AI 와 ML 은 과거의 offline / history 데이터만 이용하는 경우가 많지만, 이는 온라인 상에서 비교/확인을 하지 않는다는 점에서 한계가 있다.
 이를 극복하기 위해서 A/B 테스트로 대표되는 온라인 테스트와 함께 쓰여야 한다. 
 한편,  multi-armed bandit 이라는 방법은 A/B 테스트보다 유연한 테스트와 실험을 할 수 있게 한다. 
