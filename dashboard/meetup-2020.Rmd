@@ -40,10 +40,10 @@ Column {.tabset}
 <br>
 <br>
 
-- When: **Wednesday, October 14, 2020 7:00 PM to 9:00 PM GMT+9**
-    - RSVP opens **RSVP opens Wednesday, September 30, 2020 7:00 PM**
+- When: **Wednesday, November 11, 2020 7:00 PM to 9:00 PM GMT+9**
+    - RSVP opens **RSVP opens Wednesday, October 28, 2020 7:00 PM**
 - Where: Online Event - Link visible for attendees
-- [Seoul R Users: 2020 - October](https://www.meetup.com/seoul-r-meetup/events/273025689/)
+- [Seoul R Users: 2020 - November](https://www.meetup.com/seoul-r-meetup/events/rmcgxrybcpbpb/)
 
 <br>
 <br>
@@ -148,13 +148,13 @@ Column {.tabset}
 
 
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: ""
-    - **Speaker**: 
+    - Title: Data Journalism
+    - Korean Title: "데이터 저널리즘"
+    - **Speaker**: 권오성
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: ""
-    - **Speaker**: 
+    - Title: Simple AutoML Starting with KubeFlow
+    - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
+    - **Speaker**: 이승우
 - **Talk** (25min talk, 5min Q&A)
     - Title: "Making Mobile App Using Shiny"
     - Korean Title: "Shiny를 이용한 Mobile App 만들기"
