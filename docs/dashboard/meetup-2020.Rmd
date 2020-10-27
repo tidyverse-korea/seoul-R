@@ -156,9 +156,28 @@ Column {.tabset}
     - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
     - **Speaker**: 이승우
 - **Talk** (25min talk, 5min Q&A)
-    - Title: "Making Mobile App Using Shiny"
-    - Korean Title: "Shiny를 이용한 Mobile App 만들기"
-    - **Speaker**: Nam-Hyeon Jee (이남현)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
     - Abstract: 
 
 
+### Janumary (1월)
+
+<br>
+<br>
+
+
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
+- **Talk** (25min talk, 5min Q&A)
+    - Title: "Making Mobile App Using Shiny"
+    - Korean Title: "Shiny를 이용한 Mobile App 만들기"
+    - **Speaker**: Nam-Hyeon Jee (지남현)
+    - Abstract: 
