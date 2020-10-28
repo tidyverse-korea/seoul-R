@@ -156,9 +156,9 @@ Column {.tabset}
     - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
     - **Speaker**: 이승우
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
+    - Title: "My experience: Release and maintain CRAN packages"
     - Korean Title: 
-    - **Speaker**: 
+    - **Speaker**: 문건웅 (Keon-Woong Moon)
     - Abstract: 
 
 
@@ -169,8 +169,8 @@ Column {.tabset}
 
 
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: 
+    - Title: "파워포인트를 넘어서 - `xaringan`"
+    - Korean Title: "Beyond Powerpoint - `xaringan`"
     - **Speaker**: 
 - **Talk** (25min talk, 5min Q&A)
     - Title: 
