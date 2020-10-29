@@ -148,13 +148,13 @@ Column {.tabset}
 
 
 - **Talk** (25min talk, 5min Q&A)
+    - Title: "파워포인트를 넘어서 - `xaringan`"
+    - Korean Title: "Beyond Powerpoint - `xaringan`"
+    - **Speaker**: 이광춘(Kwangchun Lee)
+- **Talk** (25min talk, 5min Q&A)
     - Title: Data Journalism
     - Korean Title: "데이터 저널리즘"
     - **Speaker**: 권오성
-- **Talk** (25min talk, 5min Q&A)
-    - Title: Simple AutoML Starting with KubeFlow
-    - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
-    - **Speaker**: 이승우
 - **Talk** (25min talk, 5min Q&A)
     - Title: "My experience: Release and maintain CRAN packages"
     - Korean Title: 
@@ -169,9 +169,9 @@ Column {.tabset}
 
 
 - **Talk** (25min talk, 5min Q&A)
-    - Title: "파워포인트를 넘어서 - `xaringan`"
-    - Korean Title: "Beyond Powerpoint - `xaringan`"
-    - **Speaker**: 
+    - Title: Simple AutoML Starting with KubeFlow
+    - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
+    - **Speaker**: 이승우
 - **Talk** (25min talk, 5min Q&A)
     - Title: 
     - Korean Title: 
