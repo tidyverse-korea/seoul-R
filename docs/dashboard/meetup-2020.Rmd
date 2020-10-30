@@ -131,6 +131,8 @@ Column {.tabset}
     - Title: Almost All about Table
     - Korean Title: "표에 대한 거의 모든 것"
     - **Speaker**: Kwangchun Lee (이광춘)
+    - [slide deck](https://statkclee.github.io/ds-authoring/seoul_r_table.html)
+    - Abstract: Categorical data is everywhere. We need to understand categorical data with different angles. In this talk, we will see many different aspects of categorical data ranging from table structure to ggplot-style table authoring. Also, all presentation slides are made of `xaringan` as a bonus.
 - **Talk** (25min talk, 5min Q&A)
     - Title: "It's just a magic!!!"
     - Korean Title: "유튜브 데이터의 마술"
