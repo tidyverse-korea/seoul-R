@@ -137,6 +137,7 @@ Column {.tabset}
     - Title: "It's just a magic!!!"
     - Korean Title: "유튜브 데이터의 마술"
     - **Speaker**: Kevin Na (나성호)
+    - [slide deck](https://github.com/MrKevinNa/YouTubeMagic)
     - Abstract: 유튜브 크롤링으로 수집한 데이터를 sqlite3로 저장하고 깃허브로 푸쉬할 때마다 자동으로 Shiny 대시보드에서 호출하여 시각화하는 방법을 공유하는 자리입니다. YouTube Crawler + Sqlite DB + Github + RShiny + Crontab = Just Magic!!!
 - **Talk** (25min talk, 5min Q&A)
     - Title: "Making serverless API with AWS Lambda and API Gateway in an easy way"
@@ -176,8 +177,8 @@ Column {.tabset}
     - **Speaker**: 이승우
 - **Talk** (25min talk, 5min Q&A)
     - Title: 
-    - Korean Title: 
-    - **Speaker**: 
+    - Korean Title: "Shiny 활용 의학연구지원" 
+    - **Speaker**: 김진섭(JinSeoup Kim)
 - **Talk** (25min talk, 5min Q&A)
     - Title: "Making Mobile App Using Shiny"
     - Korean Title: "Shiny를 이용한 Mobile App 만들기"
