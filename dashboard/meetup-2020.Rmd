@@ -143,6 +143,8 @@ Column {.tabset}
     - Title: "Making serverless API with AWS Lambda and API Gateway in an easy way"
     - Korean Title: "AWS Lamba 와 API Gateway로 가볍게 서버리스 API 만들기"
     - **Speaker**: JungHwan Yun (윤정환)
+    - [slide deck](https://www.notion.so/R-AWS-Lambda-REST-API-33d4231753b148a487b4ad26a232d9a4)
+    - Abstract: R로 작성된 스크립트를 구동할 수 있는 AWS Lambda 기반 API 서버를 만드는 방법에 대해서 소개합니다. 20분만에 루틴한 전처리 작업을 하거나 가벼운 분석 모형을 서빙할 수 있는 API를 만들 수 있습니다.
 
 ### December (12월)
 
