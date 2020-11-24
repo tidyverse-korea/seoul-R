@@ -40,10 +40,10 @@ Column {.tabset}
 <br>
 <br>
 
-- When: **Wednesday, November 11, 2020 7:00 PM to 9:00 PM GMT+9**
-    - RSVP opens **RSVP opens Wednesday, October 28, 2020 7:00 PM**
+- When: **Friday, December 11, 2020 7:00 PM to 9:00 PM GMT+9**
+    - RSVP opens **RSVP opens Friday, November 27, 2020 7:00 PM**
 - Where: Online Event - Link visible for attendees
-- [Seoul R Users: 2020 - November](https://www.meetup.com/seoul-r-meetup/events/rmcgxrybcpbpb/)
+- [Seoul R Users: 2020 - December](https://www.meetup.com/seoul-r-meetup/events/ccqpbsybcqbmb/)
 
 <br>
 <br>
@@ -156,6 +156,8 @@ Column {.tabset}
     - Title: "파워포인트를 넘어서 - `xaringan`"
     - Korean Title: "Beyond Powerpoint - `xaringan`"
     - **Speaker**: 이광춘(Kwangchun Lee)
+    - [slide deck](https://statkclee.github.io/ds-authoring/seoul_r_xaringan.html#1)
+    - Abstract: So far, Microsoft Powerpoint has been a global standard in making slideshows. But due to the commercial software and lack of supporting reproducible data science slideshows, data science community has been looking for open slideshow tools. In response to this challenge, R community introduced the `xaringan` package several years ago. Like other tidyverse tools, `xaringan` has been successful in building slideshows ecosystem. Now, it's a perfect time to make presentation materials with `xaringan`.
 - **Talk** (25min talk, 5min Q&A)
     - Title: Data Journalism
     - Korean Title: "데이터 저널리즘"
