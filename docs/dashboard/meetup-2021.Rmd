@@ -1,0 +1,100 @@
+---
+title: "."
+output: 
+  flexdashboard::flex_dashboard:
+    logo: fig/hex-tidyverse.png
+    orientation: rows    
+    theme: readable
+    vertical_layout: fill
+    css: extra.css
+    include:
+      after_body: footer.html
+      before_body: header.html
+mainfont: NanumGothic 
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+## 0. R 마크다운 환경설정 ------
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE,
+                    comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+options(knitr.duplicate.label = 'allow')
+
+library(flexdashboard)
+```
+
+
+2021
+===============================================================================
+
+
+Column {.tabset}
+-----------------------------------------------------------------------------
+
+### Overview
+
+<br>
+<br>
+
+- When: **Friday, December 11, 2020 7:00 PM to 9:00 PM GMT+9**
+    - RSVP opens **RSVP opens Friday, November 27, 2020 7:00 PM**
+- Where: Online Event - Link visible for attendees
+- [Seoul R Users: 2020 - December](https://www.meetup.com/seoul-r-meetup/events/ccqpbsybcqbmb/)
+
+<br>
+<br>
+
+- **Schedule**
+    - 6:30 open zoom
+    - 7:00-7:30 Presentation Talk 1
+    - 7:30-8:00 Presentation Talk 2
+    - 8:00-8:30 Presentation Talk 3
+    - 8:30 ~ 9:00 Virtual Social
+
+<br>
+<br>
+
+
+### January (1월)
+
+<br>
+<br>
+
+
+- **Talk** (25min talk, 5min Q&A)
+    - Title: Simple AutoML Starting with KubeFlow
+    - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
+    - **Speaker**: 이승우
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: "Shiny 활용 의학연구지원" 
+    - **Speaker**: 김진섭(JinSeoup Kim)
+- **Talk** (25min talk, 5min Q&A)
+    - Title: "Making Mobile App Using Shiny"
+    - Korean Title: "Shiny를 이용한 Mobile App 만들기"
+    - **Speaker**: Nam-Hyeon Jee (지남현)
+    - Abstract: 
+
+### February (2월)
+
+<br>
+<br>
+
+
+- **Talk** (25min talk, 5min Q&A)
+    - Title: "Crawling the United States stock data"
+    - Korean Title: "미국주식 데이터 수집"
+    - **Speaker**: 이현열
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
+- **Talk** (25min talk, 5min Q&A)
+    - Title: 
+    - Korean Title: 
+    - **Speaker**: 
+    - Abstract: 

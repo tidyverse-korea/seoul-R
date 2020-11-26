@@ -169,22 +169,3 @@ Column {.tabset}
     - Abstract: 
 
 
-### Janumary (1월)
-
-<br>
-<br>
-
-
-- **Talk** (25min talk, 5min Q&A)
-    - Title: Simple AutoML Starting with KubeFlow
-    - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
-    - **Speaker**: 이승우
-- **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: "Shiny 활용 의학연구지원" 
-    - **Speaker**: 김진섭(JinSeoup Kim)
-- **Talk** (25min talk, 5min Q&A)
-    - Title: "Making Mobile App Using Shiny"
-    - Korean Title: "Shiny를 이용한 Mobile App 만들기"
-    - **Speaker**: Nam-Hyeon Jee (지남현)
-    - Abstract: 
