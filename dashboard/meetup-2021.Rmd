@@ -70,12 +70,12 @@ Column {.tabset}
     - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
     - **Speaker**: 이승우
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
+    - Title: Medical Research Support using Shiny"
     - Korean Title: "Shiny 활용 의학연구지원" 
     - **Speaker**: 김진섭(JinSeoup Kim)
 - **Talk** (25min talk, 5min Q&A)
-    - Title: "Making Mobile App Using Shiny"
-    - Korean Title: "Shiny를 이용한 Mobile App 만들기"
+    - Title: "Data Analysis with KNIME"
+    - Korean Title: "KNIME을 이용한 데이터분석" + $\alpha$ "Shiny 이용 모바일앱 개발
     - **Speaker**: Nam-Hyeon Jee (지남현)
     - Abstract: 
 
