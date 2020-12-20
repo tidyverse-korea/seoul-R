@@ -94,9 +94,9 @@ Column {.tabset}
     - Korean Title: "R을 이용한 GIS 데이터 핸들링"
     - **Speaker**: 하헌철
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: 
-    - **Speaker**: 
+    - Title: Case Study: Time Series Analysis with R
+    - Korean Title: "돈이 될지도 모르는 암호화폐의 변동성 분석"
+    - **Speaker**: 안상선(SangSun Ahn)
     - Abstract: 
 
 
@@ -109,7 +109,7 @@ Column {.tabset}
 - **Talk** (25min talk, 5min Q&A)
     - Title: 
     - Korean Title: 
-    - **Speaker**: 
+    - **Speaker**: 송효진(HyoJin Song)
 - **Talk** (25min talk, 5min Q&A)
     - Title: 
     - Korean Title: 
