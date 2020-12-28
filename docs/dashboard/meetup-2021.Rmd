@@ -107,8 +107,8 @@ Column {.tabset}
 
 
 - **Talk** (25min talk, 5min Q&A)
-    - Title: 
-    - Korean Title: 
+    - Title: "Data Visualization Happening"
+    - Korean Title: "데이터 시각화 해프닝"
     - **Speaker**: 송효진(HyoJin Song)
 - **Talk** (25min talk, 5min Q&A)
     - Title: 
