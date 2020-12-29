@@ -80,7 +80,9 @@ Column {.tabset}
     - Title: "Data Analysis with KNIME"
     - Korean Title: "KNIME을 이용한 데이터분석" + $\alpha$ "Shiny 이용 모바일앱 개발
     - **Speaker**: Nam-Hyeon Jee (지남현)
-    - Abstract: 
+    - [shinyMobile 소개](data/2. shinyMobile 소개 (지남현).pdf), [KNME 소개](data/1-1. KNME 소개_엑셈 (지남현).pdf), [knime_study_workflow](data/1-3. knime_study_workflow (지남현).zip), [KNIME Cheatsheet](https://www.knime.com/cheat-sheets)
+    - Abstract 1 : KNIME Analytics Platform은 GUI workflow 기반으로 데이터 선택부터 전처리, 변환, 분석, 모델링, 평가, 시각화 까지 일련의 분석 과정을 손쉽게 작업할 수 있는 분석 플랫폼으로, 독일의 Konstanz University에서 Java로 2004년 부터 개발해 온 오픈소스 프로그램 입니다.
+    - Abstract 2 : shinyMobile은 shiny용 대시보드 (shinydashboardplus, bs4Dash, argonDash 등) 패키지를 만든 RinteRface에서, Framework7 템플릿 기반으로 만든 모바일용으로 shiny 대시보드 패키지 입니다.
 
 ### February (2월)
 
