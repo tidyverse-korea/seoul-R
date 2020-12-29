@@ -151,6 +151,14 @@ Column {.tabset}
 <br>
 <br>
 
+- When: **Friday, December 11, 2020 7:00 PM to 9:00 PM GMT+9**
+    - RSVP opens **RSVP opens Friday, November 27, 2020 7:00 PM**
+- Where: Online Event - Link visible for attendees
+- [Seoul R Users: 2020 - December](https://www.meetup.com/seoul-r-meetup/events/ccqpbsybcqbmb/)
+
+<br>
+<br>
+
 
 - **Talk** (25min talk, 5min Q&A)
     - Title: "파워포인트를 넘어서 - `xaringan`"
