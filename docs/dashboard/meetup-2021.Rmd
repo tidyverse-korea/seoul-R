@@ -65,17 +65,22 @@ Column {.tabset}
 <br>
 <br>
 
-
 - **Talk** (25min talk, 5min Q&A)
-    - Title: Medical Research Support with R/shiny"
+    - Title: "Data Science with R and Python" 
+    - Korean Title: "R과 파이썬 데이터 과학"
+    - **Speaker**: 이광춘(Kwangchun Lee)
+    - [slidedeck](https://statkclee.github.io/data-science/ds-languages.html)
+    - Abstract: R 혹은 파이썬이 데이터 과학에 더 적합하고 어떤 데이터 과학 언어가 평정할 것이냐는 전쟁은 이제 새로운 세대를 맞고 있습니다. 데이터 과학을 어떤 언어로 하느냐가 중요한 것이 아니냐 풀려고 하는 문제를 어떻게 데이터 과학 문제로 정의하고 데이터 과학 언어로 문제를 풀면 되지 않느냐는 주장이 설득력을 얻고 있으며 몇년전부터 개발되기 시작한 `reticulate`가 두 진영을 이어주는 핵심 팩키지로 자리를 잡아가고 있습니다.
+- **Talk** (25min talk, 5min Q&A)
+    - Title: "Medical Research Support with R/shiny"
     - Korean Title: "Shiny 활용 의학연구지원" 
     - **Speaker**: 김진섭(JinSeoup Kim)
     - [slidedeck](https://jinseob2kim.github.io/lecture-general/tidyversekorea)
     - Abstract: 의과대학, 보건대학원, 삼성전자를 거치면서 다양한 건강데이터를 다룬 경험을 바탕으로 연구지원법인 차라투를 설립, R/Shiny 로 의학연구자들을 지원 중입니다. Shinykorea 의 진행과 후원을 맡아 의료/축산/게임/반도체/신용평가/IPTV 등 다양한 분야의 사람들과 함께 Shiny 를 알아가는 중입니다. 
 - **Talk** (25min talk, 5min Q&A)
-    - Title: Simple AutoML Starting with KubeFlow
-    - Korean Title: "KubeFlow로 시작하는 간단한 AutoML"
-    - **Speaker**: 이승우
+    - Title: ~~Simple AutoML Starting with KubeFlow~~
+    - Korean Title: ~~"KubeFlow로 시작하는 간단한 AutoML"~~
+    - **Speaker**: ~~이승우~~
 - **Talk** (25min talk, 5min Q&A)
     - Title: "Data Analysis with KNIME"
     - Korean Title: "KNIME을 이용한 데이터분석" + $\alpha$ "Shiny 이용 모바일앱 개발
