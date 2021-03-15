@@ -188,6 +188,7 @@ dlookr 패키지는 데이터가 분석을 수행할 품질을 만족하는지 �
     - Title: "데이터 과학 워드 프로세서"
     - Korean Title: "Word Processor for Data Science"
     - **Speaker**: 이광춘(Kwangchun Lee)
+    - Abstract: RStudio announced that RStudio v1.4 has provided "Visual Markdown Editing". With this feature data scientists can focus on technical writing itself such that they can improve documents quality. In this short talk, "Visual Markdown Editing" feature will be presented and Korean language supporting experiences will be shared.
     - 초록: Visual R Markdown 편집기능이 RStudio v1.4에 포함되면서 글쓰기에 좀더 집중을 하면서 전반적인 데이터 과학 문서 품질향상에 획기적인 변화가 생겨 새롭게 추가된 획기적인 Visual R Markdown 기능과 한국어를 반영할 수 있는 방법을 함께 고민하고자 합니다.
     - [slidedeck]()
 - **Talk** (25min talk, 5min Q&A)
