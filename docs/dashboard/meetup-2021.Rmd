@@ -190,7 +190,7 @@ dlookr 패키지는 데이터가 분석을 수행할 품질을 만족하는지 �
     - **Speaker**: 이광춘(Kwangchun Lee)
     - Abstract: RStudio announced that RStudio v1.4 has provided "Visual Markdown Editing". With this feature data scientists can focus on technical writing itself such that they can improve documents quality. In this short talk, "Visual Markdown Editing" feature will be presented and Korean language supporting experiences will be shared.
     - 초록: Visual R Markdown 편집기능이 RStudio v1.4에 포함되면서 글쓰기에 좀더 집중을 하면서 전반적인 데이터 과학 문서 품질향상에 획기적인 변화가 생겨 새롭게 추가된 획기적인 Visual R Markdown 기능과 한국어를 반영할 수 있는 방법을 함께 고민하고자 합니다.
-    - [slidedeck]()
+    - [slidedeck](https://statkclee.github.io/latex/document-ide.html)
 - **Talk** (25min talk, 5min Q&A)
     - Title: Propensity score analysis using R
     - Korean Title: R기반 성향점수분석
@@ -200,12 +200,13 @@ This talk will introduce main concepts and crucial steps in propensity score ana
     - 초록: 대부분의 사회과학 데이터는 실험설계를 따르지 않는 관측연구 상황에서 얻어집니다.
 이러한 관측연구 상황에서 타당하게 인과관계를 추론할 수 있는 방법으로 성향점수분석 기법을 소개합니다.
 성향점수분석에서 등장하는 핵심 개념들을 알아보고, R에서 주요 진행 절차를 실습해보겠습니다.
-    - [slidedeck](data/20210310_Diagnosis_and EDA.pdf)
+    - [slidedeck](data/RMeetup_PSA_slide_210414.pdf)
 - **Talk** (25min talk, 5min Q&A)
     - Title: "DataRobot's Location AI, ease of featurizing" 
     - Korean Title: "DataRobot의 위치정보를 활용한 모델링"
     - **Speaker**: 홍운표(WoonPyo Hong)
     - Abstract: What and how are the available ways of feature engineering at location-relevant features in R? Review some cases in pure R scripting, we'll consider DataRobot's Location AI plus R API which is a good alternative to the existing approach as an enterprise AI platform.
     - 초록: 위치정보가 포함된 데이터를 활용하여 모델링할 때 R usage를 살펴보고, 이의 대안으로 Enterprise AI Platform인 DataRobot의 Location AI 기능과, R api를 활용하는 방법을 소개합니다.
+    - [slidedeck](data/DataRobot Location AI - R meetup.pdf)
 
 
