@@ -44,11 +44,15 @@ R is an open source software and programming language for data ingestion, data p
 - Shiny Seoul Meetup: [link](https://github.com/shinykorea/Meetup)
 
 <br>
-<br>
 
 #### Organizers
 
 - [Choonghyun Ryu, 유충현](https://github.com/choonghyunryu)
 - [Kwangchun Lee, 이광춘](https://github.com/statkclee)
 - [Keon-Woong Moon, 문건웅](https://github.com/cardiomoon)
+
+<br>
     
+#### Sponsors
+
+[![](fig/openup_logo.png){width=10%}](https://www.oss.kr/)
