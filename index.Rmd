@@ -39,6 +39,9 @@ library(glue)
 ```{r child="dashboard/overview.Rmd", encoding="UTF-8"}
 ```
 
+```{r child="dashboard/meetup-2022.Rmd", encoding="UTF-8"}
+```
+
 ```{r child="dashboard/meetup-2021.Rmd", encoding="UTF-8"}
 ```
 

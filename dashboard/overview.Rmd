@@ -34,14 +34,15 @@ Overview
 <br>
 <br>
 
-R is an open source software and programming language for data ingestion, data processing, exploratory data analysis, statistical modeling, visualization and machine learning among other things. Recently, as the term **"data science"** has emerged to describe collectively these tasks, R has also become the primary tool of choice for data scientists. The [**Tidyverse Seoul R meetup**](https://www.meetup.com/seoul-r-meetup) brings together local users of R and featuring talks with world-class speakers while creating fruitful networking opportunities for its members.
+R is an open source software and programming language for data ingestion, data processing, exploratory data analysis, statistical modeling, visualization and machine learning among other things. Recently, as the term **"data science"** has emerged to describe collectively these tasks, R has also become the primary tool of choice for data scientists. The [**Seoul R meetup**](https://www.meetup.com/seoul-r-meetup) brings together local users of R and featuring talks with world-class speakers while creating fruitful networking opportunities for its members.
 
+- **Seoul R Meetup**: [link](https://www.meetup.com/seoul-r-meetup)
+- Korea R User Group: [link](https://r2bit.com/)
+- Korea R Conference: [link](https://use-r.kr/)
 - Global R Meetup: [link](https://benubah.github.io/r-community-explorer/rugs.html)
 - Tidyverse Seoul R Meetup: [link](https://tidyverse-korea.github.io/seoul-R/)
 - Youtube Channel: [link](https://www.youtube.com/channel/UCW-epmIvjBEhhVXw_F0Nqbw)
 - Facebook Group: [link](https://www.facebook.com/groups/tidyverse)
-- **Seoul R Meetup**: [link](https://www.meetup.com/seoul-r-meetup)
-- Shiny Seoul Meetup: [link](https://github.com/shinykorea/Meetup)
 
 <br>
 
@@ -50,6 +51,8 @@ R is an open source software and programming language for data ingestion, data p
 - [Choonghyun Ryu, 유충현](https://github.com/choonghyunryu)
 - [Kwangchun Lee, 이광춘](https://github.com/statkclee)
 - [Keon-Woong Moon, 문건웅](https://github.com/cardiomoon)
+- [Seonghak Hong, 홍성학](https://aidenhong.com/)
+- [Jonghwa Shin, 신종화](https://rcmdr.kr/)
 
 <br>
     

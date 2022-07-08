@@ -1,0 +1,58 @@
+---
+title: "."
+output: 
+  flexdashboard::flex_dashboard:
+    logo: fig/hex-tidyverse.png
+    orientation: rows    
+    theme: readable
+    vertical_layout: fill
+    css: extra.css
+    include:
+      after_body: footer.html
+      before_body: header.html
+mainfont: NanumGothic 
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+## 0. R 마크다운 환경설정 ------
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE,
+                    comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+options(knitr.duplicate.label = 'allow')
+
+library(flexdashboard)
+```
+
+
+2022
+===============================================================================
+
+
+Column {.tabset}
+-----------------------------------------------------------------------------
+
+### July (7월)
+
+<br>
+<br>
+
+- **Talk/Hands-on** (50min talk, 10min Q&A)
+    - Title: "Tidyverse Meets Shiny" 
+    - Korean Title: "Tidyverse Meets Shiny"
+    - **Speaker**: 이광춘(Kwangchun Lee)
+    - [slidedeck](https://aispiration.com/ds-authoring/tidyverse-shiny.html#1)
+    - Abstract: flexdashboard, crosstalk, shiny 도구를 사용해서 정적 대쉬보드,
+    Standalone 인터랙티브 기능 구현, 오픈 통계 교과서 기반이 되는 Shiny 서버 기술을  
+    통해 데이터 과학 웹앱 개발의 무한한 가능성을 탐구
+- **Talk/Hands-on** (50min talk, 10min Q&A)
+    - Title: "Naver News with Shiny"
+    - Korean Title: "Shiny로 네이버 뉴스 검색하기" 
+    - **Speaker**: 유충현(Choonghyun Ryu)
+    - [slidedeck](https://choonghyunryu.github.io/tidyverse-meets-shiny/)
+    - Abstract: Shiny 애플리케이션 개발의 ABC에서 시작하여 Shiny 앱의 동작을 이해하고, 간단한 어플리케이션 개발을 위한 자신감을 통해 네이버 뉴스 수집과 간단한 텍스트 분석 핸즈온 실습
+
+
