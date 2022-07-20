@@ -35,10 +35,45 @@ library(flexdashboard)
 Column {.tabset}
 -----------------------------------------------------------------------------
 
+### August (8월)
+
+<br>
+<br>
+
+- When: **Saturday, August 13, 2022 10:00 AM to 12:00 AM GMT+9
+- Where: Konkuk University · Seoul / 건국대학교 상허연구관 320호
+- [Seoul R Users: 2022 - August](https://www.meetup.com/seoul-r-meetup/events/287301435/)
+
+- Talk/Hands-on (30min talk, 10min Q&A)
+    - Title: “ggplot2 coloring guide”
+    - Korean Title: “ggplot2 컬러링 가이드”
+    - Speaker: 방태모(BANG TaeMo)
+    - Abstract: 보다 적은 수의 컬러를 사용해 직관적인 시각화를 수행하는 방법
+    - 발표자료
+- Talk/Hands-on (30min talk, 10min Q&A)
+    - Title: “Advanced 'Rcmdr' practice”
+    - Korean Title: “R Commander 99% 활용법”
+    - Speaker: 신종화(SHIN Jong-Hwa)
+    - Abstract: Rcmdr GUI 통계 툴이 있습니다. RStudio와 연계한 중급 사용법, Plugin 패키지 활용과 개발 이야기를 나눕니다.
+    - [참고자료1](https://rcmdr.kr) 
+    - [참고자료2](https://modernity.tistory.com) 
+- Talk/Hands-on (50min talk, 10min Q&A)
+    - Title: “Deep Learning with R”
+    - Korean Title: “R 딥러닝”
+    - Speaker: 이광춘(Kwangchun Lee)
+    - [발표자료](https://aispiration.com/united-states/)
+    - Abstract: 딥러닝 발전이 눈부시는 한편 이에 대한 R 진영의 대응도 빨라지고 있다. 이에 따라 최근 R에서 딥러닝을 활용하여 데이터 과학/통계 문제를 풀어나가는 엔지니어링 측면에서 살펴보고자 한다.
+
+
+
 ### July (7월)
 
 <br>
 <br>
+
+- When: **Saturday, July 9, 2022 10:00 AM to 12:00 AM GMT+9
+- Where: Sungkyunkwan University · Seoul / 성균관대학교 퇴계인문관
+- [Seoul R Users: 2022 - July](https://www.meetup.com/seoul-r-meetup/events/286541787/)
 
 - **Talk/Hands-on** (50min talk, 10min Q&A)
     - Title: "Tidyverse Meets Shiny" 

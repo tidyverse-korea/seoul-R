@@ -59,3 +59,4 @@ R is an open source software and programming language for data ingestion, data p
 #### Sponsors
 
 [![](fig/openup_logo.png){width=10%}](https://www.oss.kr/)
+[![](fig/R_Consortium-logo-vertical-color.png){width=10%}](https://www.r-consortium.org/)
