@@ -40,7 +40,7 @@ Column {.tabset}
 <br>
 <br>
 
-- When: **Saturday, August 13, 2022 10:00 AM to 12:00 AM GMT+9
+- When: Saturday, August 13, 2022 10:00 AM to 12:00 AM GMT+9
 - Where: Konkuk University · Seoul / 건국대학교 상허연구관 320호
 - [Seoul R Users: 2022 - August](https://www.meetup.com/seoul-r-meetup/events/287301435/)
 
@@ -71,7 +71,7 @@ Column {.tabset}
 <br>
 <br>
 
-- When: **Saturday, July 9, 2022 10:00 AM to 12:00 AM GMT+9
+- When: Saturday, July 9, 2022 10:00 AM to 12:00 AM GMT+9
 - Where: Sungkyunkwan University · Seoul / 성균관대학교 퇴계인문관
 - [Seoul R Users: 2022 - July](https://www.meetup.com/seoul-r-meetup/events/286541787/)
 
