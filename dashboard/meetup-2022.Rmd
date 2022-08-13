@@ -49,7 +49,7 @@ Column {.tabset}
     - Korean Title: “ggplot2 컬러링 가이드”
     - Speaker: 방태모(BANG TaeMo)
     - Abstract: 보다 적은 수의 컬러를 사용해 직관적인 시각화를 수행하는 방법
-    - 발표자료
+    - [발표자료](https://be-favorite.github.io/Presentation_archive/coloring_guide/coloring_guide.html)
 - Talk/Hands-on (30min talk, 10min Q&A)
     - Title: “Advanced 'Rcmdr' practice”
     - Korean Title: “R Commander 99% 활용법”
