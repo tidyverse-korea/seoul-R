@@ -35,6 +35,38 @@ library(flexdashboard)
 Column {.tabset}
 -----------------------------------------------------------------------------
 
+### September (10월)
+
+<br>
+<br>
+
+- When: Saturday, September 24, 2022 13:00 to 17:00 AM GMT+9
+- Where: Sungkyunkwan University · Seoul / 성균관대학교 다산경제관 33221
+- [Seoul R Users: 2022 - September](https://www.meetup.com/seoul-r-meetup/events/287874898/)
+
+- Talk/Hands-on (50min talk, 10min Q&A)
+    - Title: “R Data Journalism: Text Mining”
+    - Korean Title: “R기반 데이터저널리즘: 텍스트마이닝의 활용”
+    - Speaker: 안도현(Ahn Dohyun)
+    - Abstract: 데이터저널리즘에 왜 R을 이용해야 하는지, R프로그래밍은 어느 정도 수준까지 필요한지, 텍스트마이닝을 데이터저널리즘에 어떻게 활용하는지 경험을 공유합니다.
+    - 발표자료: <https://datajournalism.netlify.app/>
+- Talk/Hands-on (30min talk, 10min Q&A)
+    - Title: “Korean R Text Mining Package; bitTA”
+    - Korean Title: “한글 R 텍스트 마이닝 패키지; bitTA”
+    - Speaker: 한국R사용자회(Korea R User Group)
+    - Abstract: 한글 텍스트 분석을 빠르고 정확하고 쉽게 작업하여 생산적인 결과물을 뽑아내는데 축적된 지식과 경험을 담아낸 한글 텍스트 마이닝 패키지 bitTA를 공유합니다.
+    - 발표자료: https://github.com/bit2r/bitTA
+    
+- Two Track Hands-on Tutorial (각 2hrs ):
+    - Advanced Track (홍성학)
+         * Title: "한국어임베딩과 R언어(Korean Embedding and R Language)"
+         * Abstract: 전통적인 자연어처리와 텍스트마이닝부터 BERT와 같은 최신 워드임베딩 방식의 텍스트마이닝 기법에 대한 장벽과 현황에 대해서 공유하고 R을 이용한 여러가지 최신 워드임베딩 모델을 사용하는 패키지와 코드를 소개합니다.
+         * [발표자료](https://aidenhong.com/presentations/korean-embedding-with-r/korean-embedding-with-r.html)
+    - Learning Track (이광춘)
+         * Title: "데이터 패키지(Data Packaging for Korean Context)"
+         * Abstract: 데이터 사이언스의 시작점이 되는 제대로된 한국 데이터셋에 문제를 인식하고 bitData 를 소개하고 추가 데이터를 함께 만들어 기여하고 이를 분석하여 가능하면 Vignette에 추가하는 것까지 짧은 시간 참여자와 함께 합니다.
+         * 발표자료: [bitData](https://r2bit.com/bitData/) Vignette
+
 ### August (8월)
 
 <br>
