@@ -35,7 +35,7 @@ library(flexdashboard)
 Column {.tabset}
 -----------------------------------------------------------------------------
 
-### September (10월)
+### September (9월)
 
 <br>
 <br>
