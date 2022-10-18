@@ -35,6 +35,44 @@ library(flexdashboard)
 Column {.tabset}
 -----------------------------------------------------------------------------
 
+### October (10월)
+
+<br>
+<br>
+
+- When: Saturday, October 22, 2022 13:00 to 17:00 AM GMT+9
+- Where: Sungkyunkwan University · Seoul / 성균관대학교 다산경제관 31406
+- [Seoul R Users: 2022 - October](https://www.meetup.com/seoul-r-meetup/events/287875293/)
+
+- Talk/Hands-on (30min talk, 10min Q&A): 31406호
+    - Title: “IFRS Valuation Report with Rmarkdown”
+    - Korean Title: “IFRS R마크다운 보고서 ”
+    - Speaker: 형환희 CPA (HwanHee Hyung)
+    - Abstract: IFRS 가치평가 보고서를 RMarkdown을 활용하여 자동화한 경험을 공유합니다.
+    - [발표자료](https://joy-hhh.github.io/seoul_R_meetup/)
+- Talk/Hands-on (30min talk, 10min Q&A): 31406호
+    - Title: “증권사의 API를 이용한 자동거래”
+    - Korean Title: “Automatic transactions using the API of securities firms”
+    - Speaker: 이현열 CFA (Hyunyul Lee)
+    - Abstract: 증권사 API를 이용한 시스템 자동거래에 대한 경험을 공유합니다.
+    - [발표자료](../data/221022_r_meetup_api/index.html)
+- Talk/Hands-on (30min talk, 10min Q&A): 31406호
+    - Title: "Dynamic Pricing"
+    - Korean Title: "Dynamic Pricing"
+    - Instructor(강사): 한국R사용자회(Korea R User Group) 강사
+    - [발표자료](https://statkclee.github.io/pricing)
+- Hands-on Tutorial A (2 Hr): 31406호
+    - Title: "연식이냐 주행거리냐 그것이 문제로다"
+    - Instructor(강사): 나성호
+    - 상세내용: 엔카 중고차 데이터를 바탕으로 차종별 (중형차/대형차) 회귀모형 개발과 등급별 비교
+    - [워크샵자료](https://github.com/hdsceokevin/R-Meetup)
+- Hands-on Tutorial B (2 Hr): 31405호
+    - Title: "OS와 무관한 데이터 과학 개발 환경 구성"
+    - Instructor(강사): 김호성
+    - 상세내용: 디지털 글쓰기 Shiny App 컨셉설명, 별도 구성한 환경을 시연
+    - [워크샵자료](https://github.com/joygram/bit-server) [디지털 글쓰기](http://r2bit.ddns.net/)
+
+
 ### September (9월)
 
 <br>
