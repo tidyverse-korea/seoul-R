@@ -55,7 +55,7 @@ Column {.tabset}
     - Korean Title: “Automatic transactions using the API of securities firms”
     - Speaker: 이현열 CFA (Hyunyul Lee)
     - Abstract: 증권사 API를 이용한 시스템 자동거래에 대한 경험을 공유합니다.
-    - [발표자료](../data/221022_r_meetup_api/index.html)
+    - [발표자료](data/221022_r_meetup_api/index.html)
 - Talk/Hands-on (30min talk, 10min Q&A): 31406호
     - Title: "Dynamic Pricing"
     - Korean Title: "Dynamic Pricing"
