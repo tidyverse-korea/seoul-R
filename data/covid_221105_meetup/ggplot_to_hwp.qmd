@@ -1,0 +1,351 @@
+---
+title: "ggplot으로 만든 plot hwp에 붙이기"
+lang: kr
+author: "장명헌"
+date: "2022-11-05"
+format: 
+  html:
+    code-fold: show
+mainfont: NanumGothic
+---
+
+# 공통
+## library + 한글 출력 설정
+
+```{r}
+#| warning: false
+
+library(tidyverse)
+library(lubridate)
+library(openxlsx)
+library(RColorBrewer)
+library(showtext)
+library(cowplot)
+
+# showtext setting
+font_add("NanumBarunGothic", "NanumBarunGothic.ttf") # 구글폰트도 사용 가능
+showtext_opts(dpi = 300) # default dpi = 92라 해상도에 문제 발생
+showtext_auto()
+```
+
+## 사용자 함수 작성
+
+```{r}
+
+# 날짜 서식 함수
+my_scale_date <- function(breaks = date_breaks) {
+  scale_x_date(
+    labels = function(z) {
+      strftime(z, "%y.%m.") %>%
+        gsub("\\.0", "\\.", .) %>%
+        paste0("'", .)
+    },
+    breaks = breaks,
+    expand = c(0.01, 0.01) # 축과 값 간의 간격 조정
+  )
+}
+
+# 그림 저장 함수
+# - 한글에 붙일 수 있도록 높이, 길이, dpi 조정
+# - pipe로 사용
+
+myf_ggsave <- function(plot = ., path, w = 16, h = 6) {
+  plot %>%
+    ggsave(path, plot = ., width = w, height = h, units = "cm", dpi = 300)
+}
+
+# excel 반올림 함수
+round_xl <- janitor::round_half_up
+```
+
+# 일자별, 누적 확진자 그래프
+
+## 데이터 세팅
+
+corona board github 자료 활용 [link](https://github.com/jooeungen/coronaboard_kr)
+
+```{r}
+corona <- read.csv("./source/kr_regional_daily.csv") %>%
+  mutate(date = ymd(date), region = factor(
+    region,
+    c(
+      "서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종",
+      "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주", "검역"
+    )
+  ))
+
+corona_plot <- corona %>%
+  arrange(region, date) %>%
+  mutate(daily = confirmed - lag(confirmed)) %>% # 누계가 기본값, 일별 확진자 계산
+  group_by(date) %>%
+  summarise(daily = sum(daily), cum_sum = sum(confirmed))
+
+date_breaks <- seq(ymd("2020-01-01"), ymd("2022-10-19"), by = "3 month")
+```
+
+## 그래프 그리기
+
+### ggplot theme 지정
+
+```{r}
+my_theme <- theme_bw() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 20),
+    text = element_text(size = 12),
+    panel.border = element_blank(),
+    axis.line = element_line(size = 0.3),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    strip.text.x = element_text(size = 10),
+    strip.background = element_blank(),
+    legend.title = element_blank(),
+    legend.margin = NULL,
+    legend.position = c(0.1, 0.3),
+    legend.spacing = unit(-0.1, units = "cm"),
+    legend.background = element_blank(),
+    legend.text = element_text(size = 10)
+  )
+```
+
+### 1번 그래프
+
+```{r}
+p1 <- ggplot(corona_plot, aes(x = date)) +
+  geom_col(aes(y = daily, fill = "일별 확진")) +
+  geom_line(aes(y = cum_sum / 25, color = "누적 확진")) +
+  my_scale_date() +
+  scale_y_continuous(
+    labels = function(z) {
+      paste0(z / 10000, "만")
+    }, expand = c(0.01, 1),
+    sec.axis = sec_axis(~ . * 3, label = function(z) {
+      paste0(z / 10000, "만")
+    })
+  ) +
+  scale_fill_manual(values = c("일별 확진" = "skyblue")) +
+  scale_color_manual(values = c("누적 확진" = "darkblue")) +
+  my_theme +
+  guides(
+    fill = guide_legend(keywidth = 0.3, keyheight = 0.3, default.unit = "cm"),
+    color = guide_legend(keywidth = 0.3, keyheight = 0.3, default.unit = "cm")
+  )
+
+p1 <- p1 +
+  annotate("segment",
+    x = ymd("2020-03-01"), xend = ymd("2021-12-31"),
+    y = 500000, yend = 500000,
+    color = "darkgreen",
+    arrow = arrow(ends = "both", length = unit(0.3, "cm"))
+  ) +
+  geom_text(aes(x = ymd("2021-01-30"), y = 500000),
+    label = "코로나19 대응부서 근무기간\n(20.3.1.~21.12.31.)",
+    color = "darkgreen"
+  ) +
+  annotate("rect",
+    xmin = ymd("2022-01-01"), xmax = ymd("2022-10-19"),
+    ymin = -Inf, ymax = Inf,
+    alpha = 0.75
+  )
+```
+
+### 2번 그래프
+
+```{r}
+p2 <- ggplot(
+  data = corona_plot %>% filter(date <= ymd("2021-12-31")),
+  aes(x = date)
+) +
+  geom_col(aes(y = daily, fill = "일별 확진")) +
+  geom_line(aes(y = cum_sum / 50, color = "누적 확진")) +
+  my_scale_date(
+    c(seq(ymd("2020-01-01"), ymd("2021-12-31"), by = "3 month"), 
+    ymd("2021-12-31"))
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 10000, 5000),
+    labels = function(z) {
+      paste0(z / 10000, "만")
+    }, expand = c(0.01, 1),
+    sec.axis = sec_axis(~ . * 3, label = function(z) {
+      paste0(z / 10000, "만")
+    })
+  ) +
+  scale_fill_manual(values = c("일별 확진" = "skyblue")) +
+  scale_color_manual(values = c("누적 확진" = "darkblue")) +
+  my_theme +
+  theme(legend.position = "none") +
+  guides(
+    fill = guide_legend(keywidth = 0.3, keyheight = 0.3, default.unit = "cm"),
+    color = guide_legend(keywidth = 0.3, keyheight = 0.3, default.unit = "cm")
+  )
+```
+
+### 그림 합치기
+
+```{r}
+#| warning: false
+#| fig-align: center
+
+plot_grid(p1, p2, align = "hv", axis = "lr", nrow = 2)
+```
+
+### 그림 저장
+
+ggsave의 width와 height에 따라 그림 비율이 달라지므로 유의   
+(html과 png 비율 상이)
+
+a4는 210(w) x 297(h) mm 이고, 용지 여백은 통상 좌우 모두 20mm   
+따라서 최대 width는 210 - 40 = 170mm
+
+height는 그림이 들어갈 위치에 따라 지정
+
+myf_ggsave의 기본 값은 w = 16, h = 6   
+[사용자 함수 작성] 참조
+
+```{r}
+#| warning: false
+#| eval: false
+
+plot_grid(p1, p2, align = "hv", axis = "lr", nrow = 2) %>% 
+  myf_ggsave("total.png")
+```
+
+# 교육통계 그래프
+
+2022년 교육기본통계 공개자료 활용 [link](https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=92429&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N)
+
+## 학교 수
+
+### 데이터 세팅
+
+```{r}
+school <- read.xlsx("./source/edu_stat.xlsx", sheet = 1) %>%
+  select(!전체) %>%
+  filter(연도 <= 2010 | 연도 >= 2020) %>%
+  rename_with(~ c("연도", "유", "초", "중", "고", "기타")) %>%
+  pivot_longer(cols = 유:기타, names_to = "학교급", values_to = "학교수") %>%
+  group_by(연도) %>%
+  mutate(
+    연도 = as.character(연도),
+    학교급 = factor(학교급, c("유", "초", "중", "고", "기타")),
+    누계 = cumsum(학교수),
+    추가 = ifelse(is.na(lag(누계)), 누계 / 2,
+      lag(누계) + (누계 - lag(누계)) / 2
+    )
+  )
+```
+
+### 그래프
+
+```{r}
+p1 <- ggplot(school, aes(연도, 학교수, fill = fct_rev(학교급))) +
+  geom_col() +
+  geom_text(
+    aes(y = 추가, label = ifelse(
+      학교수 <= 999, 학교수, format(학교수, big.mark = ",")
+    )),
+    size = 3
+  ) +
+  geom_text(
+    aes(y = 추가, label = ifelse(학교급 == "기타", format(누계, big.mark = ","), "")),
+    size = 3, vjust = -2
+  ) +
+  scale_x_discrete(expand = c(0.08, 0.08)) +
+  scale_y_continuous(labels = function(x) {
+    ifelse(x <= 999, x, format(x, big.mark = ","))
+  }, expand = c(0.01, 0.1), limits = c(0, 25000)) +
+  scale_fill_brewer(palette = "Set2", labels = c("유", "초", "중", "고", "기타")) +
+  theme_bw() +
+  theme(
+    plot.background = element_blank(),
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.line.y.left = element_line(size = 0.3),
+    axis.line.x.bottom = element_line(size = 0.3),
+    axis.title.x = element_blank(),
+    legend.title = element_blank(),
+    legend.position = "bottom",
+    legend.background = element_blank(),
+    legend.margin = margin(0, 0, 0, 0)
+  ) +
+  guides(
+    fill = guide_legend(keywidth = 0.3, keyheight = 0.3, default.unit = "cm")
+  )
+```
+
+## 학생 수
+
+### 데이터 세팅
+
+```{r}
+student <- read.xlsx("./source/edu_stat.xlsx", sheet = 2) %>%
+  select(!전체) %>%
+  filter(연도 <= 2010 | 연도 >= 2020) %>%
+  rename_with(~ c("연도", "유", "초", "중", "고", "기타")) %>%
+  pivot_longer(cols = 유:기타, names_to = "학교급", values_to = "학생수") %>%
+  group_by(연도) %>%
+  mutate(
+    연도 = as.character(연도),
+    학교급 = factor(학교급, c("유", "초", "중", "고", "기타")),
+    누계 = cumsum(학생수),
+    추가 = ifelse(is.na(lag(누계)), 누계 / 2,
+      lag(누계) + (누계 - lag(누계)) / 2
+    )
+  )
+```
+
+### 그래프
+
+```{r}
+p2 <- ggplot(student, aes(연도, 학생수, fill = fct_rev(학교급))) +
+  geom_col() +
+  geom_text(
+    aes(y = 추가, label = ifelse(
+      학생수 <= 999,
+      round_xl(학생수 / 10000),
+      format(round_xl(학생수 / 10000), big.mark = ",")
+    )),
+    nudge_y = ifelse(student$학교급 %in% c("유", "기타"), 10, 0),
+    size = 3
+  ) +
+  geom_text(
+    aes(y = 추가, label = ifelse(
+      학교급 == "기타", format(round_xl(누계 / 10000), big.mark = ","), "")
+    ),
+    size = 3, vjust = -2
+  ) +
+  scale_x_discrete(expand = c(0.08, 0.08)) +
+  scale_y_continuous(
+    labels = function(x) {
+      paste0(ifelse(
+        x <= 999 * 10000,
+        x / 10000,
+        format(x / 10000, big.mark = ",")
+      ), "만")
+    }, expand = c(0.01, 0.1),
+    limits = c(0, 12500000)
+  ) +
+  scale_fill_brewer(palette = "Set2") +
+  theme_bw() +
+  theme(
+    plot.background = element_blank(),
+    panel.background = element_blank(),
+    panel.border = element_blank(),
+    axis.line.y.left = element_line(size = 0.3),
+    axis.line.x.bottom = element_line(size = 0.3),
+    axis.title.x = element_blank(),
+    legend.position = "none"
+  ) +
+  guides(
+    fill = guide_legend(keywidth = 0.3, keyheight = 0.3, default.unit = "cm")
+  )
+```
+
+## 그림 합치기
+
+```{r}
+#| warning: false
+#| fig-align: center
+
+plot_grid(p1, p2, align = "h", nrow = 2)
+```

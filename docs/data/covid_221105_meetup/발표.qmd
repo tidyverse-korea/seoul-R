@@ -1,0 +1,259 @@
+---
+title: "R로 넘어온 험난한 시간"
+subtitle: "코로나 부서에서 R, shiny, hwp 사용기"
+lang: kr
+author: "장명헌"
+date: "2022-11-05"
+format: 
+  revealjs:
+    incremental: true   
+    theme: white
+    # css: "index.css"
+    transition: concave
+    background-transition: fade
+    smaller: false
+    scrollable: false
+    #self-contained: true
+    view-distance: 5
+mainfont: NanumGothic
+---
+
+## 발표자 소개
+
+<br>
+
+### 장명헌
+
+2006년부터 공무원 시작, 올해 17년차
+
+교육부에 근무하다가 올해 2월 부터 국무조정실 파견 근무 중
+
+R과 인연은 2020년부터   
+(코로나19대응 대학긴급대응팀→코로나19대응 학교상황총괄과)
+
+## 유·초·중등 현황
+
+![](./source/school.png)
+
+## 고등 현황
+
+![](./source/univ.png)
+
+## 교육행정 체제{.smaller}
+
+![](./source/hierarchy.png)
+
+시: 서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종   
+
+도: 경기, 강원, 충북, 충남, 전북, 전남, 경북, 경남, 제주
+
+## 교육부 소속이 아닌 학교들
+
+<br>
+
+- KAIST, GIST, DGIST, UNIST, 경찰대, 사관학교 등
+- 구미전자공고, 부산기계공고, 부산해사고 등
+- 제주국제학교, 제주도 사립대학 등
+
+## 내가 했던 일
+
+- 유학생 입국 관리
+- 유·초·중등 코로나19 상황보고, 통계 관리, 분석
+
+::: {.fragment}
+![](./source/total.png){fig-align="center"}
+:::
+
+## 유학생 현황
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYWhXT%2FbtrKZDx6WMR%2Fg2IKzJDU3t2M5HwXumUK5K%2Fimg.png)
+
+## 유학생 입국 현황
+
+:::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+![](./source/foerign1.png)
+![](./source/foerign2.png)
+:::
+
+::: {.fragment .fade-up}
+![](./source/foerign3.png)
+:::
+:::: 
+
+## 중국 유학생을 막아라
+
+20.1~2월 부터 중국 유학생 입국 자제 요청
+
+3월 발령 후 본 광경
+
+:::{.r-stack}
+![](./source/exhaust.jpg){.fragment width="500" height="350"}
+:::
+
+:::{.fragment}
+밤 12시까지 각 대학에서 E-mail로 보낸 엑셀 자료 취합 중
+:::
+
+## 무얼 했나?
+
+<br>
+<br>
+
+대학에서 메일로 들어오던걸 시스템으로 전환   
+(20.3월 말 부터 시스템 개통)
+
+<br>
+
+시스템 가동 전까진 vba로 엑셀 파일 합치기
+
+## 잠깐의 휴식과 R과의 만남
+
+<br>
+<br>
+
+6월에 K-mooc에서 R 데이터 분석 입문 강의 수강
+
+<br>
+
+20.2학기 방통대 통계학과 편입   
+(일-학습 병행은 어렵다)
+
+## 유·초·중등 코로나 상황 관리
+
+<br>
+
+점점 늘어나는 확진자
+
+<br>
+
+보고받은 확진 내용을 사례별로 정리(hwp)해서 매일 보고   
+학생 확진자와 등교 학생수(등교율) 보도자료 매일 배포
+
+<br>
+
+보고도 바뀌어야 하는데 세부 내역은 그대로 유지되어 업무 과다   
+<!-- (학교 소속, 학년, 성명(익명), 형제자매, 동선, 학원, 누가 검사 중인가) -->
+
+## 무얼 했는가?
+
+<br>
+<br>
+
+통계 자료 관리 Excel → Access   
+(정형화 된 통계 자료는 피벗테이블 돌리는 것보다 SQL이 월등)
+
+<br>
+
+R로 그래프 그리기   
+(엑셀로 일일이 수작업하기 보다 코드짜서 재활용하는게 낫다)
+
+## hwp 자동화 도전과 한계
+
+파이썬으로 한글을 컨트롤 할 수 있다 [https://martinii.fun/](https://martinii.fun/)
+
+내가 시도한 방법 → 한계가 있었다
+![](./source/hangul.mp4)
+
+## 통계 관리 개선
+
+<br>
+
+Access → mariadb / 여러사람이 쓰게, 대신 입력은 Access로
+
+<br>
+
+hwp 서식 변경 / 통계 산출이 좀 더 편하게
+
+<br>
+
+Excel과 mariadb 연계 / 다른 사람들은 액셀이 편하다   
+(엑셀에서 산출된 통계표를 한글에 그대로 붙여넣게)   
+(공무원은 무조건 hwp)
+
+<br>
+
+보도자료 배포 주기 일 1회 → 주 2회 / 우리도 좀 살자
+
+## 요구하는게 많아진다
+
+<br>
+<br>
+
+통계 유형, 서식도 다양해진다.   
+이거 없냐? 저거 없냐? 이런 건 분석 안해보냐?
+
+<br>
+
+나는 이제 떠나고 싶은데... → 너 나가면 누가하는데?
+
+## 내가 하는데까진 하고 가자
+
+<br>
+
+나 없어도 그래프, 통계표 산출하도록 shiny 쓰자
+
+shiny-server는 linux에서만 돈다 → WSL2 쓰고 Docker 쓰자   
+<!-- (서버 지원 같은 건 행복한 이야기...) -->
+
+shiny를 위한 계속되는 삽질   
+ - 폐쇄망 환경에 WSL2, Docker 설치를 어떻게?   
+ - 설치하면 ip는? 경로는? library는?   
+ - shiny reactivity? ui? tidy evaluation?   
+
+shiny 구축(중간버전)
+[link](http://shiny.jnote.duckdns.org)
+
+## 드디어 탈출... 이후 코로나 부서 이야기
+
+<br>
+
+shiny를 좀 더 쓰다가 원하는 통계들이 달라지더라   
+→ 다시 excel로 회귀(R을 쓸 수 있는 사람이 없어서)
+
+<br>
+
+내가 구축한 시스템을 토대로 외주 시스템 개발을 추진   
+→ 엎어짐(시스템 설계, 관리할 사람 부재)
+
+<br>
+
+업무량 → 22년 상반기부터 감소(확진자 폭증)
+
+## 내가 썼던 프로그램들
+
+### server
+
+mariadb(windows), wsl2(with docker), shiny-server(docker)
+
+### language
+
+R, SQL, Python
+
+### editor
+
+vscode, DBeaver, Rstudio
+
+### office
+
+hwp, excel(+ power query), access, powerpoint
+
+## 한글에 깔끔한 플롯(ggplot)를 붙이려면
+
+<br>
+
+한글 출력 : showtext, font, dpi
+
+불필요한 요소 제거 : background, axis border, legend
+
+fig output : A4 fitting size, dpi
+
+fig detail : theme(color, fill), 숫자 자릿점, 연도 표시
+
+## 예시
+
+![](./source/hwp.png){fig-align="center"}
+
+## plot code
+
+[link](./ggplot%20to%20hwp.html)
