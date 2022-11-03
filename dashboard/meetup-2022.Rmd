@@ -73,7 +73,6 @@ Column {.tabset}
     - Instructor(강사): 이준혁
     - Abstract: 나눔국민운동본부의 후원을 받아 R, 특히 Shiny 앱개발을 차근차근 배우고자하는 분을 대상으로 디지털 불평등 해소와 데이터 문해력 향상을 위한 무료 나눔 교육을 실시합니다.
 
-
 ### October (10월)
 
 <br>
@@ -94,7 +93,7 @@ Column {.tabset}
     - Korean Title: “Automatic transactions using the API of securities firms”
     - Speaker: 이현열 CFA (Hyunyul Lee)
     - Abstract: 증권사 API를 이용한 시스템 자동거래에 대한 경험을 공유합니다.
-    - [발표자료](../data/221022_r_meetup_api/index.html)
+    - [발표자료](data/221022_r_meetup_api/index.html)
 - Talk/Hands-on (30min talk, 10min Q&A): 31406호
     - Title: "Dynamic Pricing"
     - Korean Title: "Dynamic Pricing"
