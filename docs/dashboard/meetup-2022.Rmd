@@ -55,7 +55,7 @@ Column {.tabset}
     - Korean Title: "R로 넘어온 험난한 시간들 - 교육부 코로나 부서에서 R, shiny, hwp 사용기"
     - Speaker: 교육부 장명헌 사무관    
     - Abstract: 교육부 코로나 부서에서 R, shiny, hwp 사용 경험을 발표합니다. 
-    - [발표자료](data/covid_221105_meetup/발표.html) [ggplot to hwp](data/covid_221105_meetup/ggplot_to_hwp.html)
+    - [ggplot to hwp](data/covid_221105_meetup/ggplot_to_hwp.html)
 * Talk/Hands-on (30min talk, 10min Q&A) 32211호
     - Title: “Low-Code Shiny Application Development”
     - Korean Title: “로우코드 Shiny 앱 개발”
