@@ -35,6 +35,40 @@ library(flexdashboard)
 Column {.tabset}
 -----------------------------------------------------------------------------
 
+### December (12월)
+
+<br>
+<br>
+
+- When: Saturday, December 10, 2022 13:00 to 17:00 AM GMT+9
+- Where: Sungkyunkwan University · Seoul / 성균관대학교 다산경제관 32211
+- [Seoul R Users: 2022 - November](https://www.meetup.com/seoul-r-meetup/events/288178926/)
+
+* Talk/Hands-on (50min talk, 10min Q&A): 32211호
+    - Title: “Introduction to Survival Analysisy with R”
+    - Korean Title: “R을 이용한 생존분석 기초”
+    - Speaker: 문건웅 (가톨릭 의대)
+    - Abstract: 최근 출간된 "의료인을 위한 R 생존분석" 책에 담긴 기본기 충실한 내용을 함께 공유합니다.
+    - [발표자료](https://github.com/cardiomoon/survivalWorkshop)
+* Talk/Hands-on (50min talk, 10min Q&A): 32211호
+    - Title: "Digital Writing with Quarto"
+    - Korean Title: "Quarto 로 디지털 글쓰기"
+    - Speaker: 한국R사용자회(Korea R User Group) 강사
+    - Abstract: 과학기술 디지털 글쓰기 절대반지로 급부상한 Quarto를 통해 디지털 글쓰기 기본기 경험을 전달합니다.
+    - [발표자료](https://r2bit.com/bitSlide/slideshow/202212-dreamtalk/)
+
+* Hands-on Tutorial A (2 Hr): 31405호
+    - Title: "Document Automation with SQL and R(rmd,shiny)"
+    - Korean Title: "SQL과 R(rmd,shiny)를 이용한 문서자동화"
+    - Instructor(강사): 이현열 (두물머리)
+    - Abstract: 아래한글, MS 워드 워드프로세서가 아닌 방식으로 대량의 문서를 자동화하는 방식을 소개합니다.
+    - [발표자료](data/221220_r_meetup_shiny/index.html), [샘플 보고서](data/221220_r_meetup_shiny/20221116.html)
+* Hands-on Tutorial A (2 Hr):
+    - Title: "Regression model prediction and regression analysis essence"
+    - Korean Title: "왜 같은 모델가지고 다른 이야기 하는거죠? -한번에 끝내는 회귀모형 예측과 회귀분석 에센스"
+    - Instructor(강사): 안상선 (엠로보)
+    - Abstract: 사회과학의 대표적인 연구 방법인 회귀분석과 머신러닝의 회귀모형의 주요 특징과 차이점을 소개합니다.
+
 ### November (11월)
 
 <br>

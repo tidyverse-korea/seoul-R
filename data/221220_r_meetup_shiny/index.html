@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.207">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이현열">
+
+<title>SQL과 R(rmd,shiny)를 이용한 문서자동화</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">SQL과 R(rmd,shiny)를 이용한 문서자동화</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>이현열 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="quartormd를-이용한-문서-자동화" class="level2">
+<h2 class="anchored" data-anchor-id="quartormd를-이용한-문서-자동화">Quarto(Rmd)를 이용한 문서 자동화</h2>
+<p>먼저 SQL서버에서 각종 펀드 데이터를 확인해보자.</p>
+<p><img src="images/paste-C157A4F1.png" class="img-fluid"></p>
+<p>이 중 본인이 운용하는 펀드의 어제자 수익률 및 기타 정보를 토대로 매일 보고서를 만들어야 하는 경우가 대다수다. 먼저 최근일자 수익률을 계산하는 쿼리를 작성해보자</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> fund_krcd, ymd, fund_mod_price <span class="op">/</span><span class="fu">lag</span>(fund_mod_price, <span class="dv">1</span>) <span class="kw">over</span> (<span class="kw">partition</span> <span class="kw">by</span> fund_krcd <span class="kw">order</span> <span class="kw">by</span> ymd) <span class="op">-</span> <span class="dv">1</span> <span class="kw">as</span> 수익률,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">case</span> <span class="cf">when</span> fund_krcd <span class="op">=</span> <span class="st">'K55206CY3103'</span> <span class="cf">then</span> <span class="st">'H'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">when</span> fund_krcd <span class="op">=</span> <span class="st">'K55206CY3269'</span> <span class="cf">then</span> <span class="st">'UH'</span> <span class="cf">end</span> hedge</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> KFRFV11</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> fund_krcd <span class="kw">in</span> (<span class="st">'K55206CY3103'</span>, <span class="st">'K55206CY3269'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> fund_krcd, ymd</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>) <span class="kw">as</span> b</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> ymd <span class="kw">in</span> (<span class="kw">select</span> <span class="fu">max</span>(ymd) <span class="kw">from</span> KFRFV11);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/paste-0842F2A8.png" class="img-fluid"></p>
+<p>R에서 SQL을 연결하면 해당 데이터를 받아올 수 있다. 만일 바로 서버에 접속할 수 있다면 <code>dbConnect()</code> 함수를 사용해 손쉽게 연결할 수 있다. 반면 데이터가 AWS와 같은 클라우드에 있어 ssh 연결이 필요할 경우 다음과 같은 작업을 해주면 된다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgreSQL)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ssh)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>cmd <span class="ot">&lt;-</span> <span class="st">'ssh::ssh_tunnel(ssh::ssh_connect(host = "AWS 호스트주소:22",</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">                      keyfile = "pem key 주소",</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">                      verbose = 4), port = 5555, target = "DB주소:5432")'</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>pid <span class="ot">&lt;-</span> sys<span class="sc">::</span><span class="fu">r_background</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">std_out =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">std_err =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">args =</span> <span class="fu">c</span>(<span class="st">"-e"</span>, cmd)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">drv =</span> <span class="fu">dbDriver</span>(<span class="st">'PostgreSQL'</span>),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">"127.0.0.1"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">port =</span> <span class="dv">5555</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">"이름"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">password =</span> <span class="st">"비밀번호"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbname =</span> <span class="st">"스키마"</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>실제 DB에 접속 후 해당 데이터를 받아보자.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgreSQL)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ssh)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>cmd <span class="ot">&lt;-</span> <span class="st">'ssh::ssh_tunnel(ssh::ssh_connect(host = "AWS 호스트주소:22",</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">                      keyfile = "pem key 주소",</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">                      verbose = 4), port = 5555, target = "DB주소:5432")'</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>pid <span class="ot">&lt;-</span> sys<span class="sc">::</span><span class="fu">r_background</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">std_out =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">std_err =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">args =</span> <span class="fu">c</span>(<span class="st">"-e"</span>, cmd)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">drv =</span> <span class="fu">dbDriver</span>(<span class="st">'PostgreSQL'</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">"127.0.0.1"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">port =</span> <span class="dv">5555</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">"이름"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">password =</span> <span class="st">"비밀번호"</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbname =</span> <span class="st">"스키마"</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"select * from (</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">select fund_krcd, ymd, fund_mod_price /lag(fund_mod_price, 1) over (partition by fund_krcd order by ymd) - 1 as 수익률,</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">case when fund_krcd = 'K55206CY3103' then 'H'</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="st">        when fund_krcd = 'K55206CY3269' then 'UH' end hedge</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="st">from KFRFV11</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="st">where fund_krcd in ('K55206CY3103', 'K55206CY3269')</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="st">order by fund_krcd, ymd</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="st">) as b</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="st">where ymd in (select max(ymd) from KFRFV11);</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     fund_krcd        ymd       수익률 hedge
+1 K55206CY3103 2022-11-16 -0.003390207     H
+2 K55206CY3269 2022-11-16 -0.008953779    UH</code></pre>
+</div>
+</div>
+<p>이제 Rmarkdown 혹은 Quarto에서 쿼리를 이용해 해당 데이터를 받은 후, 문서로 작성하는 방법은 다음과 같다.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>---
+title: "수익률 보고서"
+date: "`r Sys.Date()`"
+author: "이현열 (두물머리)"
+format: html
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      include = FALSE,
+                      out.width = "50%")
+```
+
+```{r echo = FALSE}
+library(RPostgreSQL)
+library(ssh)
+library(dplyr)
+library(magrittr)
+
+cmd &lt;- 'ssh::ssh_tunnel(ssh::ssh_connect(host = "AWS 호스트주소:22",
+                      keyfile = "pem key 주소",
+                      verbose = 4), port = 5555, target = "DB주소:5432")'
+
+pid &lt;- sys::r_background(
+  std_out = FALSE,
+  std_err = FALSE,
+  args = c("-e", cmd)
+)
+
+con &lt;- DBI::dbConnect(
+  drv = dbDriver('PostgreSQL'),
+  host = "127.0.0.1",
+  port = 5555,
+  user = "이름",
+  password = "비밀번호",
+  dbname = "스키마"
+)
+
+data = dbGetQuery(con, "select * from (
+select fund_krcd, ymd, fund_mod_price /lag(fund_mod_price, 1) over (partition by fund_krcd order by ymd) - 1 as 수익률,
+case when fund_krcd = 'K55206CY3103' then 'H'
+        when fund_krcd = 'K55206CY3269' then 'UH' end hedge
+from KFRFV11
+where fund_krcd in ('K55206CY3103', 'K55206CY3269')
+order by fund_krcd, ymd
+) as b
+where ymd in (select max(ymd) from KFRFV11);
+")
+
+dbDisconnect(con)
+
+data = data %&gt;%
+  mutate(ret = multiply_by(수익률, 100) %&gt;% round(., 2) %&gt;% paste0(., '%'))
+```
+
+## 수익률
+
+최근일 기준 동 펀드의 수익률은 다음과 같습니다.
+
+-   헤지형: `r data %&gt;% filter(hedge == 'H') %&gt;% select(ret) %&gt;% pull`
+-   언헷지형: `r data %&gt;% filter(hedge == 'UH') %&gt;% select(ret) %&gt;% pull`
+
+## 설정/해지
+
+펀드의 설정해지 데이터 역시 이곳에 삽입할 수 있습니다.
+
+## 그래프
+
+펀드의 그래프 역시 이곳에 삽입할 수 있습니다.</code></pre>
+</div>
+</div>
+<p>결과물은 다음과 같다.</p>
+<p><img src="images/paste-C0A3D4BF.png" class="img-fluid"></p>
+<p>매일 데이터베이스가 업데이트 되므로, 해당 qmd 파일을 렌더링 할 때마다 최근 데이터가 업데이트 된다. 따라서, 매일 오전 특정 시간에 자동으로 렌더링 하는 스케줄러를 만들어주면, 매일 보고서가 자동으로 만들어진다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(<span class="st">'report.qmd'</span>, <span class="at">output_file =</span> <span class="fu">paste0</span>(stringr<span class="sc">::</span><span class="fu">str_remove_all</span>(<span class="fu">Sys.Date</span>(), <span class="st">'-'</span>), <span class="st">'.html'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>report.qmd</strong>는 앞에서 만든 qmd 파일이며, output_file 인자를 통해 <strong>최신일.html</strong> 파일이 생성된다. 추가적으로 다음과 같은 작업을 함께 스케줄러에 넣는 것을 추천한다.</p>
+<ul>
+<li>생성 여부 slack으로 전송하기</li>
+<li>HTML 결과물 slack / 팀 이메일로 전송하기</li>
+</ul>
+<p>이로써 매일 아침 보고서를 작성하는 번거로움도 사라지고, 쓸데없는 종이를 출력하지 않아도 되 지구환경에도 도움이 된다.</p>
+</section>
+<section id="shiny를-이용한-앱-자동화" class="level2">
+<h2 class="anchored" data-anchor-id="shiny를-이용한-앱-자동화">Shiny를 이용한 앱 자동화</h2>
+<p>샤이니를 이용할 경우 인터랙티브 앱을 만들 수 있어, 훨씬 다차원의 데이터분석이 가능하다. 예를 들어 일자별 데이터를 즉각적으로 바꿔가며 확인할 수 있을 뿐 아니라, 문서로 표현할 수 없는 자유로운 분석이 가능하다.</p>
+<p>또한 앱 내에서 SQL 서버에 직접 접속하여 데이터를 받아오는 방식으로 만들경우, 원본 데이터를 로딩할 시간도 필요없으며 수 GB ~ TB를 대상으로 한 데이터분석 결과도 즉각적으로 받아볼 수 있다.</p>
+<p>예시로써, 원하는 펀드 및 기간을 선택한 후 조회를 누르면 수익률이 나오는 앱을 만들어보도록 하자. 샤이니 앱을 만들때는 먼저 손으로 그림을 그려가며 프레임을 짠 후, 이에 맞게 위젯을 배치하거나, 결과물을 나타내는 등 하나하나씩 빌드업 해나가는 것이 훨씬 효율적이고 오류도 줄일 수 잇다.</p>
+<p><img src="images/frame.png" class="img-fluid"></p>
+<p>먼저 SQL에서 원하는 펀드의 기준가 테이블을 다음과 같다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> KFRFV11;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/paste-6B4484AE.png" class="img-fluid"></p>
+<p>그러나 해당 테이블은 펀드코드(fund_krcd)를 기준으로 데이터가 나온다. 펀드명은 다음 테이블에서 확인할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> KFRCM08;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/paste-779F956F.png" class="img-fluid"></p>
+<p>두 개의 테이블을 합친 후 원하는 펀드들의 성과만 나오게 하는 쿼리는 다음과 같다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> ymd, b.fund_name, fund_mod_price </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> KFRFV11 <span class="kw">as</span> a</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">left</span> <span class="kw">join</span> KFRCM08 b</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">on</span> a.fund_krcd <span class="op">=</span> b.fund_krcd</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> a.fund_krcd <span class="kw">in</span> (<span class="st">'K55234CJ0948'</span>, <span class="st">'K55232CI4208'</span>, <span class="st">'K55306CW0035'</span>, <span class="st">'K55301BM8051'</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="st">'K55301BM7723'</span>, <span class="st">'K55301BM7632'</span>, <span class="st">'K55301BM7558'</span>, <span class="st">'K55105BC8853'</span>, <span class="st">'K55105BC8713'</span>, <span class="st">'K55105BC8440'</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="st">'K55105BC7830'</span>, <span class="st">'K55206CY3269'</span>, <span class="st">'K55206CY3103'</span>, <span class="st">'K55206BF9450'</span>, <span class="st">'K55101CU1610'</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> fund_name, ymd;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/paste-6000C497.png" class="img-fluid"></p>
+<p>이 중 원하는 펀드를 선택하게 만들기 위한 위젯이 필요하다. 위젯의 입력값에 들어가기 위한 펀드명들의 고유값은 아래와 같이 확인할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="kw">distinct</span>(fund_name) </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> KFRFV11 <span class="kw">as</span> a</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">left</span> <span class="kw">join</span> KFRCM08 b</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">on</span> a.fund_krcd <span class="op">=</span> b.fund_krcd</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> a.fund_krcd <span class="kw">in</span> (<span class="st">'K55234CJ0948'</span>, <span class="st">'K55232CI4208'</span>, <span class="st">'K55306CW0035'</span>, <span class="st">'K55301BM8051'</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="st">'K55301BM7723'</span>, <span class="st">'K55301BM7632'</span>, <span class="st">'K55301BM7558'</span>, <span class="st">'K55105BC8853'</span>, <span class="st">'K55105BC8713'</span>, <span class="st">'K55105BC8440'</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="st">'K55105BC7830'</span>, <span class="st">'K55206CY3269'</span>, <span class="st">'K55206CY3103'</span>, <span class="st">'K55206BF9450'</span>, <span class="st">'K55101CU1610'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="images/paste-4BB7F754.png" class="img-fluid"></p>
+<p>이를 R에서 불러온다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DB Connect --------------------------------------------------------------</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgreSQL)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ssh)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shinyWidgets)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>cmd <span class="ot">&lt;-</span> <span class="st">'ssh::ssh_tunnel(ssh::ssh_connect(host = "AWS 호스트주소:22",</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="st">                      keyfile = "pem key 주소",</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="st">                      verbose = 4), port = 5555, target = "DB주소:5432")'</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>pid <span class="ot">&lt;-</span> sys<span class="sc">::</span><span class="fu">r_background</span>(</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">std_out =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">std_err =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">args =</span> <span class="fu">c</span>(<span class="st">"-e"</span>, cmd)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">drv =</span> <span class="fu">dbDriver</span>(<span class="st">'PostgreSQL'</span>),</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">"127.0.0.1"</span>,</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">port =</span> <span class="dv">5555</span>,</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">"이름"</span>,</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">password =</span> <span class="st">"비밀번호"</span>,</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbname =</span> <span class="st">"스키마"</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"select distinct(fund_name) </span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="st">      from KFRFV11 as a</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="st">      left join KFRCM08 b</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="st">      on a.fund_krcd = b.fund_krcd</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="st">      where a.fund_krcd in ('K55234CJ0948', 'K55232CI4208', 'K55306CW0035', 'K55301BM8051',</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="st">      'K55301BM7723', 'K55301BM7632', 'K55301BM7558', 'K55105BC8853', 'K55105BC8713', 'K55105BC8440',</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="st">      'K55105BC7830', 'K55206CY3269', 'K55206CY3103', 'K55206BF9450', 'K55101CU1610')</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="st">      "</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(fund_name) <span class="sc">%&gt;%</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>이제 ui 부분은 다음과 같이 작성이 가능하다</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">titlePanel</span>(<span class="st">"펀드 피어 분석"</span>),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sidebarLayout</span>(</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Side </span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sidebarPanel</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> <span class="dv">3</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>          <span class="co"># 펀드 리스트</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">pickerInput</span>(</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">inputId =</span> <span class="st">"f_lst"</span>,</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="st">"펀드를 선택하세요"</span>, </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">choices =</span> lst,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">'키움불리오글로벌멀티에셋EMP증권자투자신탁(H)[혼합-재간접형]ClassA-e'</span>,</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>                         <span class="st">'키움불리오글로벌멀티에셋EMP증권자투자신탁(UH)[혼합-재간접형]ClassA-e'</span>),</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>              <span class="st">`</span><span class="at">actions-box</span><span class="st">`</span> <span class="ot">=</span> <span class="cn">TRUE</span>), </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">multiple =</span> <span class="cn">TRUE</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>          ),</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>          <span class="co"># 기간</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>          <span class="fu">dateRangeInput</span>(</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">inputId =</span> <span class="st">'date'</span>,</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">label =</span> <span class="st">'기간을 선택하세요'</span>,</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">start =</span> <span class="fu">Sys.Date</span>() <span class="sc">-</span> lubridate<span class="sc">::</span><span class="fu">years</span>(<span class="dv">1</span>),</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">end =</span> <span class="fu">Sys.Date</span>(),</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">max =</span> <span class="fu">Sys.Date</span>(),</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">format =</span> <span class="st">"yyyy-mm-dd"</span>,</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">separator =</span> <span class="st">"-"</span>),</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>          </span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>          <span class="co"># 데이터 불러오기</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>          <span class="fu">actionButton</span>(<span class="st">'go'</span>, <span class="st">'데이터 불러오기'</span>,</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>                       <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"table"</span>), <span class="at">width =</span> <span class="st">'100%'</span>)</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>          ),</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Main Panel</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mainPanel</span>(</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>          <span class="fu">plotlyOutput</span>(<span class="st">'graph'</span>, <span class="at">height =</span> <span class="st">"700px"</span>) <span class="sc">%&gt;%</span> shinycssloaders<span class="sc">::</span><span class="fu">withSpinner</span>()</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>먼저 사이드바에는 3개의 위젯이 들어간다.</p>
+<ol type="1">
+<li>pickerInput: 원하는 펀드 리스트이며, 앞서 받아온 결과를 choices 인자에 넣는다. 또한 디폴트 값으로 본인이 운용하는 펀드를 선택한다.</li>
+<li>dateRangeInput: 기간을 입력하며 시작일은 1년전, 종료일은 오늘을 선택한다.</li>
+<li>actionButton: 위의 위젯에서 입력값을 변경할 때마다 데이터를 호출할 경우 서버에 엄청난 부담이 간다. 따라서 지연받응 설정을 위한 버튼을 배치한다.</li>
+</ol>
+<p>또한 메인패널에는 수익률 그래프를 그린다. 이 외에도 불러온 데이터를 기반으로 각종 결과값을 넣을 수도 있다.</p>
+<p>다음으로 server의 코드는 다음과 같다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  db <span class="ot">=</span> <span class="fu">eventReactive</span>(input<span class="sc">$</span>go, {</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    fund <span class="ot">=</span> <span class="fu">paste</span>(input<span class="sc">$</span>f_lst, <span class="at">collapse =</span> <span class="st">"','"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    fund_c <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"'"</span>, fund, <span class="st">"'"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    query <span class="ot">=</span> <span class="fu">glue</span>(<span class="st">"</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">           select ymd, b.fund_name, fund_mod_price</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">    from KFRFV11 as a</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">    left join KFRCM08 b</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="st">    on a.fund_krcd = b.fund_krcd</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="st">    where b.fund_name in ({fund_c})</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="st">    and (ymd between '{input$date[1]}' and '{input$date[2]}')</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="st">    order by fund_name, ymd;</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span>)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    tbl <span class="ot">=</span> <span class="fu">dbGetQuery</span>(con, query)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(tbl)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>graph <span class="ot">=</span> <span class="fu">renderPlotly</span>({</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    (</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">db</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(fund_name) <span class="sc">%&gt;%</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">ret =</span> fund_mod_price <span class="sc">/</span> <span class="fu">first</span>(fund_mod_price) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> ymd, <span class="at">y =</span> ret, <span class="at">color =</span> fund_name)) <span class="sc">+</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">''</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">''</span>) <span class="sc">+</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent)</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> <span class="fu">ggplotly</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">layout</span>(<span class="at">legend =</span> <span class="fu">list</span>(</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">''</span>),</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">orientation =</span> <span class="st">"h"</span>,</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">xanchor =</span> <span class="st">"center"</span>,  </span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="fl">0.5</span>))</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>먼저 <code>eventReactive()</code> 함수를 통해 위에서 버튼을 누를 경우 데이터를 다운로드 받는다. 원하는 펀드, 원하는 일자를 기준으로 데이터를 조회하는 쿼리는 다음과 같다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> ymd, b.fund_name, fund_mod_price</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> KFRFV11 <span class="kw">as</span> a</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">left</span> <span class="kw">join</span> KFRCM08 b <span class="kw">on</span> a.fund_krcd <span class="op">=</span> b.fund_krcd</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> b.fund_name <span class="kw">in</span> (<span class="st">'키움불리오글로벌멀티에셋EMP증권자투자신탁(H)[혼합-재간접형]ClassA-e'</span>,<span class="st">'키움불리오글로벌멀티에셋EMP증권자투자신탁(UH)[혼합-재간접형]ClassA-e'</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">and</span> (ymd <span class="kw">between</span> <span class="st">'2021-11-15'</span> <span class="kw">and</span> <span class="st">'2022-11-15'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> fund_name, ymd;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>이 중 fund_name에 해당하는 펀드명은 pickerInput의 결과물을, ymd에 해당하는 일자는 dateRangeInput의 결과물을 넣어주면 된다.</p>
+<p>단, pickerInput의 결과물은 문자열 벡터로 입력되어 <code>A B</code> 형태로 저장된다. 반면 쿼리에는 해당 값을 <code>('A', 'B')</code> 형태로 바꿔줘야 한다. 이를 위한 코드가 다음과 같다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fund <span class="ot">=</span> <span class="fu">paste</span>(input<span class="sc">$</span>f_lst, <span class="at">collapse =</span> <span class="st">"','"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fund_c <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"'"</span>, fund, <span class="st">"'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>먼저 문자열 백터를 <code>paste()</code> 함수를 통해 하나의 문자로 합치며, collapse는 중간에 들어갈 문자를 뜻한다. 즉 <code>A, B</code> 형태로 문자가 완성된다.</li>
+<li>다시 한번 paste0() 함수를 통해 앞뒤로 <code>'</code>를 붙여준다. 즉 <code>'A', 'B'</code> 형태로 만든다.</li>
+</ol>
+<p>위에서 받아온 데이터를 가공한 후 <code>renderPlotly()</code> 내에서 plotly 형태로 렌더링 해준다.</p>
+<p>마지막으로 다음의 코드를 추가한다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>앱을 구동한 결과는 다음과 같다.</p>
+<p><img src="images/paste-2D46B103.png" class="img-fluid"></p>
+<p>위젯에서 원하는 항목을 선택한 후 [데이터 불러오기] 버튼을 클릭하면, 해당 입력값들을 기준으로 쿼리가 작성된 후 이를 SQL 서버로 전송한다. 그 후 결과값을 다시 R로 불러와 샤이니 앱에 출력한다. 이처럼 위젯을 통해 자유자재로 SQL 쿼리를 작성한 후 원하는 데이터를 받아올 수 있다.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
