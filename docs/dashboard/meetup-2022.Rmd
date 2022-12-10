@@ -68,6 +68,7 @@ Column {.tabset}
     - Korean Title: "왜 같은 모델가지고 다른 이야기 하는거죠? -한번에 끝내는 회귀모형 예측과 회귀분석 에센스"
     - Instructor(강사): 안상선 (엠로보)
     - Abstract: 사회과학의 대표적인 연구 방법인 회귀분석과 머신러닝의 회귀모형의 주요 특징과 차이점을 소개합니다.
+    - [발표자료](https://mrobo2016.notion.site/Seoul-R-Meetup-Tutorial-12-3a2f007dc73c40c1b131f947a52e6150)
 
 ### November (11월)
 
